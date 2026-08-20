@@ -30,7 +30,6 @@ body{
 .enterbtn{display:block;width:100%;margin:10px 0;padding:14px;font-family:inherit;font-weight:bold;font-size:19px;cursor:pointer;border:5px outset #ff00ff;background:linear-gradient(#fffb00,#ff9d00);color:#5a003a;text-shadow:1px 1px 0 #fff}
 .enterbtn:hover{background:linear-gradient(#00ffea,#00ff6a);transform:scale(1.04) rotate(1deg)}
 
-.topbar{background:#000;color:#0f0;font-family:"Courier New",monospace;font-size:14px;padding:6px 0;border-bottom:4px double #0f0;overflow:hidden;white-space:nowrap}
 .wordart{text-align:center;font-family:"Bungee Shade","Comic Sans MS",cursive;font-size:clamp(30px,9vw,86px);line-height:1.05;margin:14px 8px 6px;
   background:linear-gradient(#fff700,#ff00c8 45%,#00ffe1);-webkit-background-clip:text;background-clip:text;color:transparent;
   -webkit-text-stroke:2px #3d0033;filter:drop-shadow(4px 4px 0 #00ffff) drop-shadow(8px 8px 0 rgba(255,0,255,.6));animation:wobble 2.6s ease-in-out infinite}
@@ -84,7 +83,6 @@ b,strong{color:#c1006f}
 .ru{background:#fff;border:5px dashed #d52b1e;padding:14px}
 .ru .pair{font-size:17.5px;margin:8px 0;border-bottom:2px dotted #0039a6;padding-bottom:6px}
 .ru .cyr{color:#0039a6;font-weight:bold}
-marquee{display:block}
 
 /* ============ THE DESIGN CRIMES DEPARTMENT ============ */
 .crime{border:6px ridge #ff0090;background:#fff;padding:18px;margin:22px 0;box-shadow:11px 7px 0 rgba(0,0,0,.4)}
@@ -118,7 +116,6 @@ marquee{display:block}
   </div>
 </div>
 
-<div class="topbar"><marquee scrollamount="7">💧 you are visitor number <span id="cnt">0000000</span> 💧 please remain hydrated 💧 best viewed in Netscape Navigator 4.0 at 800x600 💧 proud member of the WET WEB RING 💧 all models on this site are dimensionally inaccurate 💧 no refunds 💧</marquee></div>
 
 <h1 class="wordart">💦 THE MOIST ZONE 💦</h1>
 <p class="sub">～*～ a shrine, hand-extruded at 215°C, for the world's best 3D printing teacher ～*～<br><span class="blink">★ NEW ★</span> now with REAL 3D MODELS you can DRAG WITH YOUR HAND ★</p>
@@ -265,7 +262,6 @@ function enterZone(extra){
   var n=parseInt(localStorage.getItem('moistCount')||'1048570',10)+Math.ceil(Math.random()*3);
   localStorage.setItem('moistCount',n);
   var s=String(n).padStart(7,'0');
-  document.getElementById('cnt').textContent=s;
   document.getElementById('cnt2').textContent=s;
 })();
 
