@@ -456,20 +456,28 @@ function buildBerries(){
   }
   g.add(put(rasp,0.85,0.02,0.55));
 
-  /* museum placard. the only correctly-printed object in the gallery. */
-  const c=document.createElement('canvas'); c.width=640; c.height=300;
-  const x=c.getContext('2d');
-  x.fillStyle='#fffdf0'; x.fillRect(0,0,640,300);
-  x.strokeStyle='#b8860b'; x.lineWidth=10; x.strokeRect(12,12,616,276);
-  x.textAlign='center'; x.fillStyle='#1a0033';
-  x.font='bold 96px "Comic Sans MS", cursive';
-  x.fillText('BERRIES', 320, 130);
-  x.font='italic 34px "Times New Roman", serif'; x.fillStyle='#8b0057';
-  x.fillText('(an incomplete exhibit)', 320, 190);
-  x.font='24px "Courier New", monospace'; x.fillStyle='#666';
-  x.fillText('one specimen is missing', 320, 240);
+  /* museum placard. the only correctly-printed object in the gallery.
+     it holds two labels: the one she reads first, and the honest one. */
+  function placard(title,sub,foot,ink,frame){
+    const c=document.createElement('canvas'); c.width=640; c.height=300;
+    const x=c.getContext('2d');
+    x.fillStyle='#fffdf0'; x.fillRect(0,0,640,300);
+    x.strokeStyle=frame; x.lineWidth=10; x.strokeRect(12,12,616,276);
+    x.textAlign='center'; x.fillStyle=ink;
+    x.font='bold 92px "Comic Sans MS", cursive';
+    x.fillText(title, 320, 128);
+    x.font='italic 34px "Times New Roman", serif'; x.fillStyle='#8b0057';
+    x.fillText(sub, 320, 190);
+    x.font='24px "Courier New", monospace'; x.fillStyle='#666';
+    x.fillText(foot, 320, 240);
+    return new THREE.CanvasTexture(c);
+  }
   const sign=new THREE.Mesh(new THREE.PlaneGeometry(1.5,0.7),
-    new THREE.MeshLambertMaterial({map:new THREE.CanvasTexture(c), side:THREE.DoubleSide}));
+    new THREE.MeshLambertMaterial({
+      map:placard('BERRIES','(an incomplete exhibit)','one specimen is missing','#1a0033','#b8860b'),
+      side:THREE.DoubleSide}));
+  sign.name='placard';
+  sign.userData.scammed=placard('SCAMMED','(a watermelon is a berry)','fam. Cucurbitaceae · type: pepo','#d40000','#d40000');
   sign.rotation.y=-0.34;
   g.add(put(sign,1.75,0.92,0.5));
   g.add(put(cyl(0.05,0.05,0.62,0xdddddd,8),1.75,0.31,0.5));
@@ -675,6 +683,12 @@ function makeViewer(el, key, opts){
       const hidden = model.getObjectByName('watermelon');
       if(hidden && !hidden.visible){
         hidden.visible=true;
+        const pl=model.getObjectByName('placard');
+        if(pl && pl.userData.scammed){                 // the label comes clean
+          pl.material.map=pl.userData.scammed;
+          pl.userData.map0=pl.userData.scammed;        // survives the layer-lines toggle
+          pl.material.needsUpdate=true;
+        }
         api.hud('SCALE ERROR RESOLVED · specimen imported at \u00d722 · SCAMMED');
         const ad=document.getElementById('advice');
         if(ad) ad.innerHTML='<span class="tag" style="background:#2f8b2f">🍉 SCAMMED 🍉</span><br>'
