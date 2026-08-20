@@ -7,19 +7,18 @@ A deliberately, aggressively cringe website built for the world's most wonderful
 
 ### Contents
 
-- **Six draggable 3D models**, rendered with three.js, every one engineered to fail:
-  a leaning Benchy, an uncalibrated calibration cube, a vase that isn't watertight,
-  a spaghetti failure, a latch that does not latch, and *Boloni* (unattributed, hairy,
-  nobody will claim it).
+- **Four draggable 3D models**, rendered with three.js, every one engineered to fail:
+  - 🍓 **Berries** — a modest plate of berries. Press **MAKE IT WORSE** and a watermelon
+    appears, because a watermelon is botanically a berry. SCAMMED.
+  - 🚤 **Benchy (ish)** — chimney leans 16°, cabin off-centre, stringing modelled as a feature.
+  - 🍝 **Spaghetti** — detached from the bed at 71%.
+  - 🥔 **Boloni** — 260 individually-extruded hairs. Nobody submitted it. Nobody will claim it.
+    Slice it open to find something written inside.
 - Slice / Add Supports / Layer Lines / **Make It Worse** controls.
 - Dangerously bad printing advice. None of it is real advice.
-- A glossary of genuine 3D printing terminology — bed adhesion, oozing, purge blob,
-  first layer squish, elephant's foot. Every term is real. That's the whole joke.
-- The Sesquipedalian Corner: hygroscopic, deliquescent, humectant, thixotropic,
-  floccinaucinihilipilification.
 - A load-bearing aphorism: *"A 3d model is like a place cell, you first need a gridcell
   to make it work."*
-- A Design Corner: Papyrus, Impact and Comic Sans in one paragraph, non-uniform text
-  scaling, justified rivers, bevel & emboss, nested marquees, a 3px gutter.
+- A Design Corner: a spinning logo, Impact at −6px letter-spacing, 235%/78% text scaling,
+  six stacked bevel shadows.
 
 Single self-contained `index.html`. Made with 💧 instead of sleep.

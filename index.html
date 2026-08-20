@@ -63,7 +63,6 @@ b,strong{color:#c1006f}
 .viewer .hud{position:absolute;top:6px;left:8px;font-family:"Courier New",monospace;font-size:12px;color:#0f0;text-shadow:0 0 6px #0f0;pointer-events:none;line-height:1.5}
 .viewer .drag{position:absolute;bottom:6px;right:9px;font-family:"Courier New",monospace;font-size:11px;color:#ff0090;pointer-events:none;animation:blink 1.6s steps(2,start) infinite}
 #mainView{height:min(60vh,420px)}
-.miniview{height:220px}
 .modelpick{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0 6px}
 .modelpick button{flex:1 1 150px;font-family:inherit;font-weight:bold;font-size:14px;padding:10px 6px;border:4px outset #ffe600;background:linear-gradient(#fffb8f,#ffd400);color:#5a003a;cursor:inherit}
 .modelpick button.on{border-style:inset;background:linear-gradient(#00ffea,#00c46a);color:#fff;text-shadow:1px 1px 0 #000}
@@ -111,7 +110,7 @@ marquee{display:block}
 <div id="portal">
   <div class="box">
     <h1>⚠️ ВНИМАНИЕ ⚠️<br>YOU ARE ENTERING<br>THE <span class="blink">MOIST</span> ZONE</h1>
-    <p>Inside you will find: six (6) draggable 3D models, all of them terrible, one of them <b>hairy</b>, and a quantity of genuinely dangerous printing advice.</p>
+    <p>Inside you will find: four (4) draggable 3D models, all of them terrible, one of them <b>hairy</b>, and a quantity of genuinely dangerous printing advice.</p>
     <p style="background:#ffe600;border:3px dashed #000;padding:8px;font-size:14.5px">🎨 <b>DESIGN HAZARD:</b> contains Papyrus, Impact, Comic Sans, non-uniform text scaling, bevel &amp; emboss and letter-spacing of &minus;6px. If you have <b>an eye for beauty</b>, look away.</p>
     <button class="enterbtn" onclick="enterZone()">✅ ENTER</button>
     <button class="enterbtn" onclick="enterZone(true)">💦 ENTER, BUT MOISTER 💦</button>
@@ -129,7 +128,7 @@ marquee{display:block}
 <!-- ===================== 3D VIEWER ===================== -->
 <div class="panel">
   <h2>🖨️ THE MODEL GALLERY 🖨️<br><small style="font-size:13.5px">real 3D. real bad. drag to rotate, scroll to zoom.</small></h2>
-  <p>Six models, modelled entirely by a computer that has never touched a printer. Every one has been carefully engineered to fail. <b>Drag them around.</b></p>
+  <p>Four models, modelled entirely by a computer that has never touched a printer. Every one has been carefully engineered to fail. <b>Drag them around.</b></p>
   <p style="font-size:14.5px;background:#ffe600;border:3px dashed #000;padding:8px">📎 <b>NOTE FROM THE LAB:</b> one model in this gallery is titled <b>"Boloni"</b>. Nobody submitted it. Nobody will claim it. It has hair. We have chosen to exhibit it anyway, in the interest of academic completeness.</p>
   <div class="modelpick" id="picker"></div>
   <div class="viewer" id="mainView">
@@ -160,16 +159,6 @@ marquee{display:block}
   <p style="font-family:'Brush Script MT',cursive;font-size:24px;color:#8b0057;margin:4px">— the world's best 3D printing teacher, 2026</p>
   <p class="caption" style="font-size:13px">peer-reviewed · load-bearing · scientifically unfalsifiable · has been printed onto a mug</p>
   <p style="font-size:15px;max-width:640px;margin:14px auto 0">Scholars remain <b>nonplussed</b>. The entorhinal cortex has declined to comment. Nevertheless the aphorism has been engraved, in Impact, upon the hearts of all who slice.</p>
-</div>
-
-<!-- ===================== LATCH ===================== -->
-<div class="panel">
-  <h2>🔒 THE LATCH-O-METER™ 🔒</h2>
-  <p>Below is an authentic 3D model of a <b>latch</b>. It does not latch. There is a four-millimetre gap where the catch should meet the hook. This was not intentional but we are calling it a design decision.</p>
-  <div class="viewer miniview" id="latchView"><div class="drag">◖ DRAG ◗</div></div>
-  <p class="caption">fig. 7 — "Latch (non-functional)". Tolerances: aspirational.</p>
-  <p style="text-align:center"><button class="bigbtn" style="font-size:24px;padding:18px 32px" onclick="doLatch()">🔒 L A T C H 🔒</button></p>
-  <div class="readout" id="latchOut">LATCHES ENGAGED: 0 — the mechanism is dry and unbothered.</div>
 </div>
 
 <!-- ===================== COMPLIMENTS ===================== -->
@@ -252,7 +241,7 @@ marquee{display:block}
   <p style="font-family:'Papyrus',fantasy;font-size:16px;color:#7b00ff">"A 3d model is like a place cell, you first need a gridcell to make it work"</p>
   <p>© 1998–2026 THE MOIST ZONE™ · A Damp Ratto Production<br>Handcrafted in Comic Sans · No filament was dried in the making of this website</p>
   <p><span class="blink">🔒 LATCH RESPONSIBLY 🔒</span></p>
-  <p style="font-size:12px;opacity:.75">(i love you. sorry about the word "moist". and "humectant". and all the others.)</p>
+  <p style="font-size:16px">I love you</p>
 </div>
 </div>
 
@@ -301,17 +290,6 @@ window.TIPS=[
 ];
 function nextTip(){
   document.getElementById('advice').innerHTML='<span class="tag">⚠️ TERRIBLE ADVICE ⚠️</span><br>'+pick(window.TIPS);
-}
-
-/* ---------- LATCH ---------- */
-var L=0;
-var LMSG=["the mechanism is dry and unbothered.","a satisfying click. you liked that.","hm. you are latching rather a lot.","the latch is warming beneath your thumb.","LATCH FATIGUE DETECTED.","please. the latch has feelings.","🔒 the latch has latched back. 🔒","защёлка. защёлка. защёлка.","the latch is now the most emotionally developed object on this page.","💦 achievement unlocked: PERSPICACIOUS LATCHER 💦"];
-function doLatch(){
-  L++;
-  document.getElementById('latchOut').textContent='LATCHES ENGAGED: '+L+' — '+LMSG[Math.min(L,LMSG.length-1)];
-  if(window.LATCHVIEW)window.LATCHVIEW.jiggle();
-  if(L>=10)rain(25);
-  click();
 }
 
 /* ---------- COMPLIMENT EXTRUDER ---------- */
@@ -400,6 +378,23 @@ function layerTex(){
 }
 const LAYER_TEX = layerTex();
 
+/* wobbly vertical rind stripes, drawn by hand, badly */
+function rind_stripes(base,dark,bands,width){
+  const c=document.createElement('canvas'); c.width=512; c.height=128;
+  const x=c.getContext('2d');
+  x.fillStyle=base; x.fillRect(0,0,512,128);
+  x.fillStyle=dark;
+  for(let s=0;s<bands;s++){
+    x.beginPath();
+    const cx=s*(512/bands)+8;
+    x.moveTo(cx,0);
+    for(let y=0;y<=128;y+=8) x.lineTo(cx+Math.sin(y*0.09+s)*7, y);
+    for(let y=128;y>=0;y-=8) x.lineTo(cx+width+Math.sin(y*0.09+s)*7, y);
+    x.closePath(); x.fill();
+  }
+  return new THREE.CanvasTexture(c);
+}
+
 function box(w,h,d,c){ return new THREE.Mesh(new THREE.BoxGeometry(w,h,d), mat(c)); }
 function cyl(rt,rb,h,c,seg){ return new THREE.Mesh(new THREE.CylinderGeometry(rt,rb,h,seg||18), mat(c)); }
 function put(m,x,y,z){ m.position.set(x,y,z); return m; }
@@ -424,73 +419,74 @@ function buildBenchy(){
   return g;
 }
 
-/* ---------- 2. TASTY MELON ---------- */
-/* Printed in one piece, wedge and all. Do not eat it. Students will try. */
-function buildMelon(){
+/* ---------- 3. BERRIES ---------- */
+/* Loads as a modest plate of berries. Press MAKE IT WORSE and the scale
+   error resolves itself: a watermelon is, botanically, a berry — a pepo.
+   So is a banana. A strawberry is not. Nobody is coping well. */
+function buildBerries(){
   const g=new THREE.Group();
 
-  /* rind texture: wobbly vertical stripes, drawn by hand, badly */
-  const c=document.createElement('canvas'); c.width=512; c.height=128;
+  function strawberry(px,pz,rot){
+    const s=new THREE.Group();
+    const body=new THREE.Mesh(new THREE.ConeGeometry(0.19,0.4,12), mat(0xe8203a));
+    body.rotation.x=Math.PI; s.add(put(body,0,0.2,0));
+    const leaf=new THREE.Mesh(new THREE.CircleGeometry(0.17,6),
+      new THREE.MeshLambertMaterial({color:0x2f8b2f,side:THREE.DoubleSide}));
+    leaf.rotation.x=-Math.PI/2; s.add(put(leaf,0,0.405,0));
+    s.add(put(cyl(0.02,0.02,0.14,0x2f8b2f,6),0,0.47,0));
+    s.position.set(px,0,pz); s.rotation.y=rot;
+    return s;
+  }
+  g.add(strawberry(-0.55,0.35,0.4));
+  g.add(strawberry(0.15,-0.5,-1.1));
+
+  /* blueberries. 0.4mm nozzle, 8mm sphere, no supports, perfect spheres allegedly */
+  for(let k=0;k<5;k++){
+    const b=new THREE.Mesh(new THREE.SphereGeometry(0.15,12,9), mat(0x3b4bb8));
+    b.scale.y=0.88;
+    g.add(put(b, rr(-1.1,0.9), 0.13, rr(-0.9,1.0)));
+  }
+  /* one raspberry, assembled from 11 separate blobs, as raspberries are */
+  const rasp=new THREE.Group();
+  for(let k=0;k<11;k++){
+    const a=k*0.9, r=k<5?0.11:0.16;
+    const d=new THREE.Mesh(new THREE.SphereGeometry(0.075,8,6), mat(0xc2185b));
+    d.position.set(Math.cos(a)*r, 0.09+(k%3)*0.075, Math.sin(a)*r);
+    rasp.add(d);
+  }
+  g.add(put(rasp,0.85,0.02,0.55));
+
+  /* museum placard. the only correctly-printed object in the gallery. */
+  const c=document.createElement('canvas'); c.width=640; c.height=300;
   const x=c.getContext('2d');
-  x.fillStyle='#6fbf3f'; x.fillRect(0,0,512,128);
-  x.fillStyle='#2f6b1f';
-  for(let s=0;s<9;s++){
-    x.beginPath();
-    const cx=s*57+10;
-    x.moveTo(cx,0);
-    for(let y=0;y<=128;y+=8) x.lineTo(cx+Math.sin(y*0.09+s)*7, y);
-    for(let y=128;y>=0;y-=8) x.lineTo(cx+16+Math.sin(y*0.09+s)*7, y);
-    x.closePath(); x.fill();
-  }
-  const rindTex=new THREE.CanvasTexture(c);
+  x.fillStyle='#fffdf0'; x.fillRect(0,0,640,300);
+  x.strokeStyle='#b8860b'; x.lineWidth=10; x.strokeRect(12,12,616,276);
+  x.textAlign='center'; x.fillStyle='#1a0033';
+  x.font='bold 96px "Comic Sans MS", cursive';
+  x.fillText('BERRIES', 320, 130);
+  x.font='italic 34px "Times New Roman", serif'; x.fillStyle='#8b0057';
+  x.fillText('(an incomplete exhibit)', 320, 190);
+  x.font='24px "Courier New", monospace'; x.fillStyle='#666';
+  x.fillText('one specimen is missing', 320, 240);
+  const sign=new THREE.Mesh(new THREE.PlaneGeometry(1.5,0.7),
+    new THREE.MeshLambertMaterial({map:new THREE.CanvasTexture(c), side:THREE.DoubleSide}));
+  sign.rotation.y=-0.34;
+  g.add(put(sign,1.75,0.92,0.5));
+  g.add(put(cyl(0.05,0.05,0.62,0xdddddd,8),1.75,0.31,0.5));
 
-  const CUT=Math.PI*0.44;                                   // the missing wedge
-  const rind=new THREE.Mesh(
-    new THREE.SphereGeometry(1.06,44,28,CUT,Math.PI*2-CUT),
-    new THREE.MeshLambertMaterial({map:rindTex,side:THREE.DoubleSide}));
-  rind.scale.set(1,0.93,1); rind.position.y=1.0; g.add(rind);
-
-  const flesh=new THREE.Mesh(new THREE.SphereGeometry(0.99,36,24),
-    new THREE.MeshLambertMaterial({color:0xff5b6e}));
-  flesh.scale.set(1,0.93,1); flesh.position.y=1.0; g.add(flesh);
-
-  /* seeds, individually placed, none of them where you would want them */
-  const seedMat=new THREE.MeshLambertMaterial({color:0x241a12});
-  for(let k=0;k<26;k++){
-    const a=CUT*rr(-0.1,1.1), r=rr(0.35,0.9), yy=rr(-0.7,0.7);
-    const seed=new THREE.Mesh(new THREE.SphereGeometry(0.055,7,6), seedMat);
-    seed.scale.set(1,1.5,0.5);
-    seed.position.set(Math.cos(a)*r, 1.0+yy, Math.sin(a)*r);
-    seed.rotation.y=-a; g.add(seed);
-  }
-
-  const stem=cyl(0.075,0.11,0.3,0x6b4b2a,10);
-  stem.rotation.z=0.35; g.add(put(stem,0.06,1.98,0));
-
-  /* an unrequested purge blob, fused to the rind forever */
-  const blob=new THREE.Mesh(new THREE.SphereGeometry(0.15,10,8), mat(FIL.lime));
-  g.add(put(blob,-0.9,0.28,0.45));
-  return g;
-}
-
-/* ---------- 3. VASE MODE VASE (seam included) ---------- */
-function buildVase(){
-  const g=new THREE.Group();
-  const pts=[];
-  for(let i=0;i<=22;i++){
-    const y=i*0.155;
-    pts.push(new THREE.Vector2(0.62+0.33*Math.sin(i*0.52)+rr(-0.04,0.04), y));
-  }
-  const lathe=new THREE.Mesh(
-    new THREE.LatheGeometry(pts, 46, 0, Math.PI*1.9),      // gap = the seam that never closed
-    new THREE.MeshLambertMaterial({color:FIL.cyan, side:THREE.DoubleSide})
-  );
-  g.add(lathe);
-  const disc=new THREE.Mesh(new THREE.CircleGeometry(0.95,40),
-    new THREE.MeshLambertMaterial({color:FIL.cyan,side:THREE.DoubleSide}));
-  disc.rotation.x=-Math.PI/2;
-  g.add(put(disc,0,0.012,0));
-  g.rotation.z=0.11;                                       // it leans
+  /* ---- the missing specimen. hidden until she makes it worse. ---- */
+  const w=new THREE.Group(); w.name='watermelon'; w.visible=false;
+  const melon=new THREE.Mesh(new THREE.SphereGeometry(1.0,44,28),
+    new THREE.MeshLambertMaterial({map:rind_stripes('#4e9c2e','#1e4d14',11,20)}));
+  melon.scale.set(1.42,0.94,0.94); melon.rotation.z=0.06;
+  w.add(put(melon,-0.3,1.0,0));
+  const vineMat=new THREE.MeshLambertMaterial({color:0x5d7d2a});
+  const stub=cyl(0.07,0.09,0.26,0x5d7d2a,10); stub.rotation.z=-0.5;
+  w.add(put(stub,-1.68,1.26,0));
+  const curl=new THREE.Mesh(new THREE.TorusGeometry(0.24,0.035,7,20,Math.PI*1.6), vineMat);
+  curl.rotation.y=Math.PI/2; curl.rotation.z=0.6;
+  w.add(put(curl,-1.9,1.5,0));
+  g.add(w);
   return g;
 }
 
@@ -507,19 +503,6 @@ function buildSpaghetti(){
       mat(i%3?FIL.orange:FIL.pink));
     g.add(tube);
   }
-  return g;
-}
-
-/* ---------- 5. THE LATCH (does not latch) ---------- */
-function buildLatch(){
-  const g=new THREE.Group(), c=FIL.grey;
-  g.add(put(box(0.3,1.5,1.25,c), -0.9,0.75,0));            // mounting plate
-  const hook=new THREE.Mesh(new THREE.TorusGeometry(0.42,0.1,8,22,Math.PI*1.3), mat(FIL.pink));
-  hook.rotation.y=Math.PI/2; g.add(put(hook,-0.55,1.0,0));
-  const pin=cyl(0.09,0.09,1.1,FIL.cyan); pin.rotation.x=Math.PI/2; g.add(put(pin,-0.55,0.35,0));
-  const catchp=box(0.46,0.26,0.9,FIL.lime);                 // the famous 4mm gap
-  g.add(put(catchp,0.42,1.0,0));
-  g.add(put(box(0.3,1.5,1.25,c), 0.95,0.75,0));
   return g;
 }
 
@@ -572,7 +555,7 @@ function buildBoloni(){
   x.textAlign='center'; x.textBaseline='middle';
   x.shadowColor='#ff2f9c'; x.shadowBlur=26;
   x.fillStyle='#ffffff';
-  x.fillText("I knew you'd check in here ;)", 512, 96);
+  x.fillText("hey, it's private ;);)", 512, 96);
   const secret=new THREE.Sprite(new THREE.SpriteMaterial({
     map:new THREE.CanvasTexture(c), transparent:true, depthTest:false
   }));
@@ -585,24 +568,18 @@ function buildBoloni(){
 }
 
 const MODELS={
+  berries:{label:'🍓 BERRIES', build:buildBerries, scale:1,
+    specs:'FILE: berries.stl\nCONTENTS: 2 strawberries, 5 blueberries, 1 raspberry (11 pieces)\nEXHIBIT STATUS: incomplete — one specimen missing\nEST. TIME: 3h 40m · PLACARD: the only part that printed correctly\nHINT: the missing specimen is a scale error away. try MAKE IT WORSE.',
+    tip:'A plate of berries. Nothing further to report. Certainly nothing that would be revealed by, say, pressing <b>🔥 MAKE IT WORSE</b>.'},
   benchy:{label:'🚤 BENCHY (ish)', build:buildBenchy, scale:1,
     specs:'FILE: benchy_FINAL_final_v3(2).stl\nMANIFOLD: no · NORMALS: several\nEST. TIME: 4h 12m · FAILURE: 4h 09m\nNOTES: chimney leans 16°, cabin off-centre, stringing modelled as a feature',
     tip:'The famous benchmark boat. If yours has a leaning chimney, that is <b>hull character</b> and should be preserved.'},
-  melon:{label:'🍈 TASTY MELON', build:buildMelon, scale:1,
-    specs:'FILE: tasty_melon_v2.stl\nWATERTIGHT: no · EDIBLE: no · CONVINCING: from 3m\nSEEDS: 26 (each a separate object, each requiring supports)\nEST. TIME: 9h 14m · MATERIAL: 3 colours, 2 filament changes, 1 regret\nNOTES: a student attempted to eat this. the wedge is not a design feature, it is where the print failed.',
-    tip:'Multi-colour prints are achieved by pausing at the correct layer and swapping filament by hand. Set the pause at the wrong layer and you have instead produced a <b>melon-adjacent object</b>, which is arguably more interesting.'},
-  vase:{label:'🏺 VASE (leaning)', build:buildVase, scale:1,
-    specs:'FILE: vase_mode_definitely_watertight.stl\nWALL: 0.4mm · WATERTIGHT: emphatically not\nLEAN: 6.3° · SEAM: 18° of open sky\nHOLDS WATER: for approximately 4 seconds',
-    tip:'Vase mode produces a single continuous wall, hence a vase that is <b>hydrophobic in spirit only</b>. Line it with hope.'},
   spaghetti:{label:'🍝 SPAGHETTI (failed print)', build:buildSpaghetti, scale:1,
     specs:'FILE: dragon_articulated_v9.stl\nSTATUS: detached from bed at 71%\nMATERIAL CONSUMED: 340g · MATERIAL USEFUL: 0g\nDIAGNOSIS: the bed was insufficiently tacky',
     tip:'When the print detaches, the machine continues extruding into the air. This is called <b>spaghetti</b>, and it is the only pasta that is also a diagnostic.'},
   boloni:{label:'🥔 BOLONI (?)', build:buildBoloni, scale:1,
     specs:'FILE: boloni_v4_FINAL_dont_open_at_work.stl\nGENUS: undetermined · SYMMETRY: approximate\nHAIRS: 260 (individually extruded, 0.4mm)\nEST. TIME: 6h 20m · SUPPORT MATERIAL: not removed, possibly load-bearing\nNOTES: appeared in the print queue unattributed. the class has agreed not to discuss it.',
-    tip:'Should an unidentified organic form appear in the print queue, print it. Investigate later. This is how <b>every</b> major discovery in the field was made, probably.'},
-  latch:{label:'🔒 LATCH (non-functional)', build:buildLatch, scale:1,
-    specs:'FILE: latch_v1_PRINT_THIS_ONE.stl\nCLEARANCE DESIGNED: 0.2mm · ACHIEVED: 4.1mm\nDOES IT LATCH: no\nDOES IT LOOK LIKE A LATCH: from far away, yes',
-    tip:'A latch requires tolerance. So do you. Neither of you were given any this week.'}
+    tip:'Should an unidentified organic form appear in the print queue, print it. Investigate later. This is how <b>every</b> major discovery in the field was made, probably.'}
 };
 
 /* ============================================================
@@ -661,7 +638,7 @@ function makeViewer(el, key, opts){
           api.hud('SLICER PREVIEW: ON — anomaly detected inside the mesh at Z=21mm');
           const ad=document.getElementById('advice');
           if(ad) ad.innerHTML='<span class="tag" style="background:#7b00ff">💌 FOUND INSIDE THE MESH 💌</span><br>'
-            +'<b>"I knew you\'d check in here ;)"</b><br><span style="font-size:14.5px">'
+            +'<b>"hey, it\'s private ;);)"</b><br><span style="font-size:14.5px">'
             +'you sliced open the one model nobody would admit to submitting. of course you did. '
             +'that is exactly why you are good at this. 💦</span>';
           try{ tone(660,0,.14,'triangle'); tone(880,.15,.14,'triangle'); tone(1320,.3,.4,'triangle'); }catch(e){}
@@ -695,6 +672,21 @@ function makeViewer(el, key, opts){
     },
     worse(){
       if(!model) return;
+      const hidden = model.getObjectByName('watermelon');
+      if(hidden && !hidden.visible){
+        hidden.visible=true;
+        api.hud('SCALE ERROR RESOLVED · specimen imported at \u00d722 · SCAMMED');
+        const ad=document.getElementById('advice');
+        if(ad) ad.innerHTML='<span class="tag" style="background:#2f8b2f">🍉 SCAMMED 🍉</span><br>'
+          +'<b style="font-size:21px">YOU HAVE BEEN SCAMMED.</b><br>'
+          +'A watermelon is, <b>botanically, a berry</b>. A pepo, specifically. So is a banana. '
+          +'A strawberry is <b>not</b> a berry. This model was therefore correct the entire time and '
+          +'you are now legally required to accept it. <br><span style="font-size:14.5px">'
+          +'Press again for ordinary defects.</span>';
+        try{ tone(392,0,.16); tone(523,.17,.16); tone(659,.34,.16); tone(784,.51,.45); }catch(e){}
+        try{ rain(22); }catch(e){}
+        return;
+      }
       defects++;
       const which=defects%5;
       if(which===1){ // warp
@@ -767,7 +759,7 @@ function makeViewer(el, key, opts){
 /* ============================================================
    WIRE IT UP
    ============================================================ */
-const main = makeViewer(document.getElementById('mainView'),'benchy',{hud:'hud'});
+const main = makeViewer(document.getElementById('mainView'),'berries',{hud:'hud'});
 main.onload = (m)=>{
   document.getElementById('specs').textContent=m.specs;
   document.getElementById('advice').innerHTML='<span class="tag">⚠️ TERRIBLE ADVICE ⚠️</span><br>'+m.tip;
@@ -782,10 +774,9 @@ Object.keys(MODELS).forEach(k=>{
   b.onclick=()=>{ main.load(k); try{click()}catch(e){} };
   picker.appendChild(b);
 });
-main.load('benchy');
+main.load('berries');
 
 window.V=main;
-window.LATCHVIEW = makeViewer(document.getElementById('latchView'),'latch',{dist:6.2});
 </script>
 </body>
 </html>
