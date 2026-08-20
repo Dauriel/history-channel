@@ -101,6 +101,39 @@ b,strong{color:#c1006f}
 @keyframes twinkle{50%{transform:scale(1.5) rotate(22deg);opacity:.5}}
 .emojirule{text-align:center;font-size:19px;letter-spacing:-2px;margin:16px 0;overflow:hidden;white-space:nowrap}
 .combo{text-transform:uppercase;font-weight:bold;font-style:italic;text-decoration:underline overline wavy #f0f;text-align:center;font-size:20px;letter-spacing:4px;line-height:2.4;color:#ff4500;font-family:"Comic Sans MS",cursive}
+
+/* ============================================================
+   ALIGNMENT
+   Nothing here is broken. Everything here is off by three to
+   eight pixels, or by one degree, which is very much worse.
+   ============================================================ */
+.wordart{margin-left:7px}
+.sub{padding-right:11px}
+.panel h2{margin-left:-14px}                  /* the header bar misses one edge by 4px */
+.crime h2{margin-right:-13px}
+.modelpick button:nth-child(2){margin-top:5px}
+.modelpick button:nth-child(4){margin-bottom:4px}
+.specs{margin-left:7px;margin-right:-3px}     /* not quite the width of the viewer above it */
+.viewer .hud{left:11px;top:5px}
+.advice{margin-left:4px}
+.cert{transform:rotate(.55deg)}               /* compounds with the panel's own tilt */
+.cert h3{padding-left:9px}
+.cert .sig{margin-right:-22px}
+.spinlogo{margin-left:calc(50% - 47px)}       /* off-centre by 8px */
+.bevel{margin-left:5px;margin-right:-2px}
+.stockphoto{margin-left:-4px}
+.keming{padding-right:14px}
+.emojirule{padding-left:6px}
+.ru{padding-left:19px;padding-right:11px}
+.ru .pair:nth-child(3){padding-left:6px}
+.construction{margin-right:5px}
+.footer p:nth-child(2){padding-left:17px}
+.footer p:nth-child(4){padding-right:23px}
+
+/* the gif. present. rotated. unexplained. */
+.stray{margin:16px 0 14px 22px;transform:rotate(-1.6deg);max-width:100%}
+.stray img{width:min(100%,370px);display:block;border:5px ridge #00ffea;box-shadow:7px 5px 0 rgba(0,0,0,.35)}
+.stray figcaption{font-family:"Times New Roman",serif;font-style:italic;font-size:12px;color:#888;padding-left:31px;margin-top:3px}
 </style>
 </head>
 <body>
@@ -109,7 +142,6 @@ b,strong{color:#c1006f}
   <div class="box">
     <h1>⚠️ ВНИМАНИЕ ⚠️<br>YOU ARE ENTERING<br>THE <span class="blink">MOIST</span> ZONE</h1>
     <p>Inside you will find: four (4) draggable 3D models, all of them terrible, one of them <b>hairy</b>, and a quantity of genuinely dangerous printing advice.</p>
-    <p style="background:#ffe600;border:3px dashed #000;padding:8px;font-size:14.5px">🎨 <b>DESIGN HAZARD:</b> contains Papyrus, Impact, Comic Sans, non-uniform text scaling, bevel &amp; emboss and letter-spacing of &minus;6px. If you have <b>an eye for beauty</b>, look away.</p>
     <button class="enterbtn" onclick="enterZone()">✅ ENTER</button>
     <button class="enterbtn" onclick="enterZone(true)">💦 ENTER, BUT MOISTER 💦</button>
     <p style="font-size:13px">(there is no third option. the latch has closed behind you.)</p>
@@ -174,6 +206,10 @@ b,strong{color:#c1006f}
     <div class="pair">hydration → <span class="cyr">увлажнение</span> <i>(uvlazhnénie)</i> — six syllables, all of them damp</div>
     <div class="pair">to seep / to ooze → <span class="cyr">сочиться</span> <i>(sochítsya)</i></div>
     <div class="pair">to squelch → <span class="cyr">хлюпать</span> <i>(khlyúpat')</i> — onomatopoeic. it <b>sounds like the thing</b>.</div>
+    <figure class="stray">
+      <img src="np_openv18_music-ezgif.com-video-to-gif-converter.gif" alt="a CAD assembly, rotating, for no stated reason">
+      <figcaption>fig. 6 — unrelated.</figcaption>
+    </figure>
     <div class="pair">latch → <span class="cyr">защёлка</span> <i>(zashchólka)</i> — it even clicks when you say it 🔒</div>
     <div class="pair">hygroscopic → <span class="cyr">гигроскопичный</span> <i>(gigroskopíchny)</i> — six syllables in the service of science</div>
   </div>
