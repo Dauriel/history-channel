@@ -49,8 +49,6 @@ body{
 b,strong{color:#c1006f}
 .moistword{color:#008b8b;font-weight:bold;text-decoration:underline wavy #ff00ff}
 
-dl.gloss dt{font-weight:bold;font-size:19px;color:#7b00ff;margin-top:14px;text-shadow:1px 1px 0 #ffe600}
-dl.gloss dd{margin:4px 0 0 18px;font-size:16.5px;border-left:5px solid var(--goo);padding-left:10px}
 
 .bigbtn{display:inline-block;font-family:inherit;font-weight:bold;font-size:17px;padding:12px 18px;margin:6px 5px;border:5px outset #00d4ff;
   background:linear-gradient(#ff5ecf,#ff0090);color:#fff;text-shadow:1px 1px 0 #000;cursor:inherit}
@@ -151,38 +149,6 @@ marquee{display:block}
   <p style="font-size:13px;text-align:center;color:#666">(none of the advice on this website is real advice. please do not do any of it to a real printer. especially the 300°C one.)</p>
 </div>
 
-<!-- ===================== FORECAST ===================== -->
-<div class="panel">
-  <h2>🌫️ TODAY'S PERSONAL FORECAST 🌫️</h2>
-  <p style="font-size:18px">
-    <b>Ambient <span class="moistword">moisture</span>:</b> <span id="fc1">…</span><br>
-    <b><span class="moistword">Hydration</span> events required:</b> <span id="fc2">…</span><br>
-    <b><span class="moistword">Latch</span> integrity:</b> <span id="fc3">…</span><br>
-    <b>Patience remaining:</b> <span id="fc4">…</span>
-  </p>
-  <button class="bigbtn" onclick="forecast()">🔮 RE-FORECAST 🔮</button>
-</div>
-
-<!-- ===================== GLOSSARY ===================== -->
-<div class="panel">
-  <h2>📚 REAL TERMS YOU MUST SAY OUT LOUD 📚</h2>
-  <p>Every term below is genuine, industry-standard 3D printing vocabulary. You have to say them. To adults. With a straight face. We did not do this to you — the industry did.</p>
-  <dl class="gloss">
-    <dt>Bed Adhesion</dt>
-    <dd>How well the warm bed grips the thing you laid on it. Improved by slathering it with glue stick until <b>tacky</b>. "The bed needs to be nice and tacky, everyone."</dd>
-    <dt>Oozing</dt>
-    <dd>When the nozzle secretes filament it was not asked to secrete. Also known in the literature as <b>drooling</b>, and, genuinely, <b>weeping</b>.</dd>
-    <dt>Purge Blob</dt>
-    <dd>The blob the printer must expel before it is ready to begin. Everyone watches. It is part of the curriculum.</dd>
-    <dt>First Layer Squish</dt>
-    <dd>The correct amount of <b>squish</b>. Too little and it won't stick; too much and you get <b>elephant's foot</b>. Yes. That is the actual name.</dd>
-    <dt>Filament <span class="moistword">Moisture</span> Absorption</dt>
-    <dd>Filament drinks water out of the air and goes soggy. Soggy filament <b>crackles</b> and <b>pops</b> out of the nozzle. The cure is a dry box, until it is once again parched.</dd>
-    <dt><span class="moistword">Latch</span></dt>
-    <dd>Extruder idler latch. Enclosure door latch. Spool holder latch. Roughly nine (9) latches per lesson. 🔒 We counted.</dd>
-  </dl>
-</div>
-
 <!-- ===================== THE QUOTE ===================== -->
 <div class="crime flare" style="background:linear-gradient(160deg,#fffdf0,#ffe6f7);text-align:center">
   <h2>💭 WORDS TO LIVE BY 💭</h2>
@@ -194,32 +160,6 @@ marquee{display:block}
   <p style="font-family:'Brush Script MT',cursive;font-size:24px;color:#8b0057;margin:4px">— the world's best 3D printing teacher, 2026</p>
   <p class="caption" style="font-size:13px">peer-reviewed · load-bearing · scientifically unfalsifiable · has been printed onto a mug</p>
   <p style="font-size:15px;max-width:640px;margin:14px auto 0">Scholars remain <b>nonplussed</b>. The entorhinal cortex has declined to comment. Nevertheless the aphorism has been engraved, in Impact, upon the hearts of all who slice.</p>
-</div>
-
-<!-- ===================== SESQUIPEDALIAN CORNER ===================== -->
-<div class="panel">
-  <h2>🎩 THE SESQUIPEDALIAN CORNER 🎩<br><small style="font-size:13.5px">unnecessarily enormous words, deployed without provocation</small></h2>
-  <p>What follows is a <b>gallimaufry</b> of <b>polysyllabic</b> lexemes selected for maximum <b>grandiloquence</b>. Several are, <b>vexingly</b>, also relevant to filament storage.</p>
-  <dl class="gloss">
-    <dt>hygroscopic <span style="font-size:13px;color:#666">/ˌhaɪɡrəˈskɒpɪk/</span></dt>
-    <dd>Readily absorbing water from the surrounding air. <b>This is a real word about your job.</b> Nylon is hygroscopic. PETG is hygroscopic. Your classroom, in August, is hygroscopic.</dd>
-    <dt>deliquescent</dt>
-    <dd>So hygroscopic it dissolves in the water it has absorbed. An aspirational state.</dd>
-    <dt>humectant</dt>
-    <dd>A substance whose entire professional purpose is to retain <span class="moistword">moisture</span>. It is a noun. It exists. Someone chose to name it that.</dd>
-    <dt>mucilaginous</dt>
-    <dd>Gluey; viscous; of the nature of mucilage. Describes both failed PETG stringing and, regrettably, porridge.</dd>
-    <dt>thixotropic</dt>
-    <dd>Becoming less viscous when agitated. Ketchup is thixotropic. So, on Thursdays, are you.</dd>
-    <dt>floccinaucinihilipilification</dt>
-    <dd>The act of estimating something as worthless. Twenty-nine letters. Applicable to the third support structure of the day.</dd>
-    <dt>ultracrepidarian</dt>
-    <dd>One who offers opinions beyond their expertise. Notably: whoever wrote the advice on this website.</dd>
-    <dt>borborygmus</dt>
-    <dd>The rumbling of gas in the intestines. Included because it is a magnificent word and because you have been teaching through lunch again.</dd>
-  </dl>
-  <div class="readout" id="wordOut" style="font-size:17px">press the button to receive a word you did not ask for</div>
-  <p style="text-align:center"><button class="bigbtn" onclick="bigword()">📖 DISPENSE AN OBFUSCATORY LEXEME 📖</button></p>
 </div>
 
 <!-- ===================== LATCH ===================== -->
@@ -363,48 +303,6 @@ window.TIPS=[
 function nextTip(){
   document.getElementById('advice').innerHTML='<span class="tag">⚠️ TERRIBLE ADVICE ⚠️</span><br>'+pick(window.TIPS);
 }
-
-/* ---------- BIG WORDS ---------- */
-var WORDS=[
-  ["sesquipedalian","given to using words that are unreasonably long, e.g. every word on this website"],
-  ["borborygmus","the audible rumbling of one's own intestines, mid-lecture, into a lapel microphone"],
-  ["psithurism","the sound of wind through trees — or of forty enclosure fans in one room"],
-  ["velleity","a wish too feeble to prompt action, e.g. 'I should really dry that spool'"],
-  ["tergiversation","the act of evasive, ambiguous statement — see also: explaining why the print failed"],
-  ["horripilation","the erection of hairs on the skin; goosebumps; what the word 'moist' achieves"],
-  ["gallimaufry","a confused jumble; a hodgepodge; the parts bin"],
-  ["obfuscate","to render unintelligible, as this sentence has comprehensively done"],
-  ["deliquesce","to dissolve into liquid absorbed from the air. filament aspires to this"],
-  ["lucubration","laborious study by night — e.g. building a website instead of sleeping"],
-  ["crepuscular","of twilight; active at dusk; the hours in which slicing is done"],
-  ["mellifluous","sweet-flowing, like honey — describes both your voice and, unfortunately, hot PLA"],
-  ["perspicacious","possessed of acute discernment, as when spotting a 0.2mm layer shift from across the room"],
-  ["susurration","a whispering or rustling — the sound of a class realising the print has failed"],
-  ["pulchritudinous","physically beautiful. an objectively hideous word for an objectively lovely thing"],
-  ["defenestration","the act of throwing someone or something out of a window. Thursday's contingency plan"],
-  ["ineffable","too great to be expressed in words, which has not stopped this website from trying"],
-  ["quotidian","daily; commonplace; the nozzle clog of ordinary life"],
-  ["eldritch","weird, sinister, otherworldly — the noise a stepper makes at 3am"],
-  ["nugatory","of no value or importance, e.g. the entirety of this paragraph"]
-];
-function bigword(){
-  var w=pick(WORDS);
-  document.getElementById('wordOut').innerHTML='<b style="color:#0f0">'+w[0].toUpperCase()+'</b><br>'+w[1];
-  click();
-}
-
-/* ---------- FORECAST ---------- */
-var F1=["87% — clammy","94% — glistening","71% — dewy","99% — actively hygroscopic","62% — merely tacky"];
-var F2=["6 sips, 1 gulp, 1 unnecessary slurp","hourly, with a straw, loudly","2L. non-negotiable.","one (1) lukewarm tea, forgotten, reheated, forgotten again"];
-var F3=["LATCHED 🔒 firmly and satisfyingly","semi-latched — a worrying wobble","UNLATCHED ⚠️ please attend to this","latched twice, out of anxiety"];
-var F4=["ample","dwindling but dignified","structurally sound, emotionally load-bearing","exhausted, yet somehow radiant","approaching floccinaucinihilipilification"];
-function forecast(){
-  document.getElementById('fc1').textContent=pick(F1);
-  document.getElementById('fc2').textContent=pick(F2);
-  document.getElementById('fc3').textContent=pick(F3);
-  document.getElementById('fc4').textContent=pick(F4);
-}
-forecast();
 
 /* ---------- LATCH ---------- */
 var L=0;
