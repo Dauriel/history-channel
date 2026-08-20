@@ -79,9 +79,6 @@ input[type=range]{width:100%;height:34px;accent-color:#ff0090}
 .cert{background:#fffdf0;border:14px double #b8860b;padding:22px;text-align:center;font-family:"Papyrus","Comic Sans MS",fantasy}
 .cert h3{font-size:clamp(18px,4.7vw,30px);margin:.2em;color:#8b0057;letter-spacing:2px}
 .cert .sig{font-family:"Brush Script MT",cursive;font-size:26px;border-top:2px solid #333;display:inline-block;margin-top:16px;padding-top:4px}
-table.book{width:100%;border-collapse:collapse;font-size:15.5px}
-table.book td{border:3px groove #ff00ff;padding:9px;vertical-align:top}
-table.book td:first-child{width:34%;background:#fff0fb;font-weight:bold}
 .construction{text-align:center;font-size:clamp(15px,4vw,22px);background:repeating-linear-gradient(45deg,#ffd400 0 20px,#000 20px 40px);padding:12px;color:#fff;-webkit-text-stroke:1px #000;font-weight:bold;text-shadow:2px 2px 0 #000}
 .footer{text-align:center;font-size:14px;color:#3d0033;padding:20px 10px 60px;line-height:1.8}
 .counter{font-family:"Courier New",monospace;background:#000;color:#0f0;padding:5px 9px;border:2px solid #0f0;letter-spacing:3px}
@@ -97,34 +94,13 @@ marquee{display:block}
 
 /* ============ THE DESIGN CRIMES DEPARTMENT ============ */
 .crime{border:6px ridge #ff0090;background:#fff;padding:18px;margin:22px 0;box-shadow:11px 7px 0 rgba(0,0,0,.4)}
-.salad{font-size:22px;line-height:2.1;text-align:justify}
-.salad .f1{font-family:"Papyrus",fantasy}
-.salad .f2{font-family:"Impact","Arial Black",sans-serif;letter-spacing:-2.5px}
-.salad .f3{font-family:"Times New Roman",serif;font-style:italic}
-.salad .f4{font-family:"Courier New",monospace;font-size:15px}
-.salad .f5{font-family:"Brush Script MT",cursive;font-size:30px}
 .keming{font-family:"Impact","Arial Black",sans-serif;font-size:clamp(26px,8vw,62px);text-align:center;letter-spacing:-6px;color:#c9c94a;text-shadow:3px 3px 0 #b0b0ff;margin:12px 0}
 .stretchy{font-family:"Arial Black",sans-serif;font-size:clamp(20px,6.4vw,48px);text-align:center;transform:scaleX(2.35) scaleY(.78);transform-origin:center;margin:26px 0 34px;color:#0a0}
-.rivers{text-align:justify;word-spacing:1.9em;font-size:18px;line-height:1.35;font-family:"Times New Roman",serif;column-count:2;column-gap:4px;column-rule:3px dotted #f0f}
-.contrastfail{background:#ffe600;color:#fff5a0;padding:16px;font-size:19px;text-shadow:0 0 1px #fff;font-weight:bold}
-.contrastfail2{background:#7b00ff;color:#6a00e0;padding:16px;font-size:19px;font-weight:bold}
-.badgrid{display:flex;flex-wrap:wrap;gap:3px;align-items:flex-end;margin:14px 0}
-.badgrid>div{flex:1 1 180px;background:#e9fbff;border:3px solid #000;padding:10px;font-size:15px}
-.badgrid>div:nth-child(1){border-radius:22px 0 9px 40px;text-align:center;transform:translateY(-7px)}
-.badgrid>div:nth-child(2){margin-top:17px;border-radius:2px;text-align:right;transform:translateX(4px) rotate(.9deg)}
-.badgrid>div:nth-child(3){margin-top:6px;border-radius:0 55px 3px 3px;text-align:left;transform:translateY(11px) rotate(-1.4deg)}
-.palette{display:flex;flex-wrap:wrap;margin:14px 0;border:4px inset #999}
-.palette div{flex:1 1 90px;height:74px;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:"Courier New",monospace;font-weight:bold;text-align:center}
 .stockphoto{width:100%;height:132px;background:linear-gradient(135deg,#ff0090,#00ffea);border:5px groove #ffe600;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .stockphoto span{font-size:92px;transform:scaleX(3.6) scaleY(.62);display:block}
 .caption{font-size:11.5px;text-align:center;font-family:"Times New Roman",serif;font-style:italic;color:#888;margin-top:3px}
 .spinlogo{width:110px;height:110px;margin:10px auto;border-radius:50%;background:conic-gradient(#ff0090,#ffe600,#00ffea,#7fff00,#ff0090);display:flex;align-items:center;justify-content:center;font-size:50px;animation:spin 2.4s linear infinite;box-shadow:0 0 26px #ff0090,inset 0 0 22px #fff}
 @keyframes spin{to{transform:rotate(360deg) scale(1.06)}}
-.bizcard{width:min(100%,420px);margin:12px auto;background:linear-gradient(160deg,#c0c0c0,#f7f7f7 40%,#9a9a9a);border:4px double #b8860b;padding:16px;box-shadow:8px 8px 14px rgba(0,0,0,.5);border-radius:0 26px 0 26px}
-.bizcard .nm{font-family:"Papyrus",fantasy;font-size:24px;color:#004080;text-shadow:2px 2px 3px #aaa;letter-spacing:3px}
-.bizcard .ttl{font-family:"Comic Sans MS",cursive;font-size:15px;color:#8b0057}
-.bizcard .info{font-family:"Impact",sans-serif;font-size:13px;letter-spacing:1.4px;color:#333;margin-top:9px;line-height:1.7}
-.bizcard .wm{font-size:34px;float:right;transform:rotate(-17deg);opacity:.35;filter:blur(.6px)}
 .bevel{font-family:"Arial Black",sans-serif;font-size:clamp(19px,5.6vw,38px);text-align:center;color:#d4d4d4;
   text-shadow:1px 1px 0 #fff,2px 2px 0 #bbb,3px 3px 0 #999,4px 4px 0 #777,5px 5px 0 #555,6px 6px 8px rgba(0,0,0,.7);
   background:linear-gradient(#f0f0f0,#8a8a8a);padding:16px;border:6px outset #ccc;margin:12px 0}
@@ -133,10 +109,6 @@ marquee{display:block}
 @keyframes twinkle{50%{transform:scale(1.5) rotate(22deg);opacity:.5}}
 .emojirule{text-align:center;font-size:19px;letter-spacing:-2px;margin:16px 0;overflow:hidden;white-space:nowrap}
 .combo{text-transform:uppercase;font-weight:bold;font-style:italic;text-decoration:underline overline wavy #f0f;text-align:center;font-size:20px;letter-spacing:4px;line-height:2.4;color:#ff4500;font-family:"Comic Sans MS",cursive}
-.mq1{background:#000;color:#0f0;border:3px solid #0f0}
-.mq2{background:#ff0090;color:#ffe600;font-size:20px;font-weight:bold}
-.dropcap::first-letter{float:left;font-family:"Papyrus",fantasy;font-size:78px;line-height:.72;padding:6px 9px 0 0;color:#ff0090;text-shadow:3px 3px 0 #00ffea}
-.gradtext{background:linear-gradient(90deg,red,orange,yellow,green,blue,indigo,violet);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:bold;font-size:22px}
 </style>
 </head>
 <body>
@@ -145,7 +117,7 @@ marquee{display:block}
   <div class="box">
     <h1>⚠️ ВНИМАНИЕ ⚠️<br>YOU ARE ENTERING<br>THE <span class="blink">MOIST</span> ZONE</h1>
     <p>Inside you will find: six (6) draggable 3D models, all of them terrible, one of them <b>hairy</b>, and a quantity of genuinely dangerous printing advice.</p>
-    <p style="background:#ffe600;border:3px dashed #000;padding:8px;font-size:14.5px">🎨 <b>DESIGN HAZARD:</b> contains Papyrus, Impact, Comic Sans, non-uniform text scaling, justified rivers, bevel &amp; emboss and a 3px gutter. If you have <b>an eye for beauty</b>, look away.</p>
+    <p style="background:#ffe600;border:3px dashed #000;padding:8px;font-size:14.5px">🎨 <b>DESIGN HAZARD:</b> contains Papyrus, Impact, Comic Sans, non-uniform text scaling, bevel &amp; emboss and letter-spacing of &minus;6px. If you have <b>an eye for beauty</b>, look away.</p>
     <button class="enterbtn" onclick="enterZone()">✅ ENTER</button>
     <button class="enterbtn" onclick="enterZone(true)">💦 ENTER, BUT MOISTER 💦</button>
     <p style="font-size:13px">(there is no third option. the latch has closed behind you.)</p>
@@ -302,7 +274,7 @@ marquee{display:block}
     <div style="font-size:42px">🏆💦🏆</div>
     <h3>CERTIFICATE OF PULCHRITUDINOUS PEDAGOGICAL EXCELLENCE</h3>
     <p style="font-size:16.5px">This document hereby attests that</p>
-    <p style="font-size:clamp(19px,4.6vw,28px);color:#0039a6"><b>THE WORLD'S MOST BEAUTIFUL RUSSIAN 3D PRINTING TEACHER</b></p>
+    <p style="font-size:clamp(19px,4.6vw,28px);color:#0039a6"><b>THE WORLD'S MOST WONDERFUL 3D PRINTING TEACHER</b></p>
     <p style="font-size:16.5px">has, across one (1) interminable week, successfully:</p>
     <p style="font-size:16px;text-align:left;display:inline-block;line-height:1.9">
       ✅ maintained exemplary bed adhesion<br>
@@ -314,23 +286,12 @@ marquee{display:block}
       ✅ been unreasonably beautiful throughout
     </p>
     <p style="font-size:16.5px;margin-top:14px">Awarded this day with warmth, admiration, and a regrettable quantity of adjectives.</p>
-    <div class="sig">💧 your boyfriend 💧</div>
+    <div class="sig">💧 your ratto 💧</div>
   </div>
   <p style="text-align:center;margin-top:14px"><button class="bigbtn" onclick="window.print()">🖨️ PRINT (in 3D, obviously) 🖨️</button></p>
 </div>
 
 <!-- ===================== GUESTBOOK ===================== -->
-<div class="panel">
-  <h2>📖 GUESTBOOK 📖 <small style="font-size:13.5px">(sign it. you cannot sign it.)</small></h2>
-  <table class="book">
-    <tr><td>Anonymous_Student_04<br><small>3 days ago</small></td><td>teacher said "the bed needs to be nice and tacky" and the room went silent for eleven seconds. 10/10 course</td></tr>
-    <tr><td>xX_PrusaEnjoyer_Xx<br><small>2 days ago</small></td><td>MY FILAMENT WAS SO HYGROSCOPIC IT WAS AUDIBLY CRACKLING. dry box. 8 hours. now parched. thank u teacher 🙏</td></tr>
-    <tr><td>grid_cell_truther<br><small>yesterday</small></td><td>"A 3d model is like a place cell, you first need a gridcell to make it work" — i think about this daily. i have not recovered.</td></tr>
-    <tr><td>your boyfriend ❤️<br><small>just now</small></td><td>hi. you are extraordinarily good at your job and also the most beautiful person i know. i made this instead of sleeping. please hydrate. 💦</td></tr>
-    <tr><td>desiccant_daddy_1987<br><small>?????</small></td><td>the silica gel remembers everything</td></tr>
-  </table>
-  <p style="text-align:center;margin-top:12px"><button class="bigbtn" onclick="alert('❌ GUESTBOOK FULL ❌\n\nToo moist. Please retry once the substrate has fully cured. 💦')">✍️ SIGN THE GUESTBOOK ✍️</button></p>
-</div>
 
 <!-- ===================== DESIGN CRIMES ===================== -->
 <div class="crime flare">
@@ -348,62 +309,6 @@ marquee{display:block}
   <p class="caption">fig. 5 — six stacked hard shadows and a gradient. WordArt '97 rides again.</p>
 </div>
 
-<div class="crime">
-  <h2>🥗 THE FONT SALAD 🥗</h2>
-  <p class="salad"><span class="f1">Dearest teacher,</span> <span class="f2">WE HAVE DEPLOYED</span> <span class="f3">five distinct typefaces</span> <span class="f4">within a single sentence,</span> <span class="f5">deliberately,</span> <span class="f1">with clashing x-heights</span> <span class="f2">AND NO BASELINE DISCIPLINE</span> <span class="f3">whatsoever.</span></p>
-  <p class="combo">papyrus impact comic sans<br>all in the same paragraph</p>
-</div>
-
-<div class="crime">
-  <h2>🌊 RIVERS OF JUSTIFIED TEXT 🌊</h2>
-  <p style="font-size:15px">Two columns. Four-pixel gutter. Justified. <b>Word-spacing: 1.9em.</b> The rivers running down this text are, fittingly, the wettest thing on the page.</p>
-  <div class="rivers dropcap">Behold the whitespace percolating vertically through the type like groundwater through a basement wall. No hyphenation. Cavernous interword gaps. A gutter so anfractuous the columns are practically latched together. The drop cap is Papyrus, it is seventy-eight pixels tall, it has a teal drop shadow, and there is nothing whatsoever that you or anyone else can do about it.</div>
-</div>
-
-<div class="crime">
-  <h2>🎨 OUR CAREFULLY CURATED BRAND PALETTE 🎨</h2>
-  <div class="palette">
-    <div style="background:#ff0090;color:#00ff00">#FF0090<br>"Hot Latch"</div>
-    <div style="background:#00ff00;color:#ff0090">#00FF00<br>"Nozzle Ooze"</div>
-    <div style="background:#ffe600;color:#ffffff">#FFE600<br>"Squelch"</div>
-    <div style="background:#7b00ff;color:#6a00e0">#7B00FF<br>"Damp Grape"</div>
-    <div style="background:#8b4513;color:#a0522d">#8B4513<br>"Slurry"</div>
-    <div style="background:#00ffea;color:#ccffff">#00FFEA<br>"Humectant"</div>
-  </div>
-  <p style="font-size:15px">Six competing hues, zero tonal hierarchy, every swatch labelled in illegible type. Contrast ratio: <b>lol</b>.</p>
-  <p class="contrastfail">↑ white on yellow. it says something important. good luck.</p>
-  <p class="contrastfail2">↑ purple on purple. also important.</p>
-</div>
-
-<div class="crime">
-  <h2>📐 THE ALIGNMENT SITUATION 📐</h2>
-  <p style="font-size:15px">Three cards. Three vertical offsets. Three border-radii. Three text alignments. Two rotations. The gap is <b>3px</b>.</p>
-  <div class="badgrid">
-    <div><b>CARD ONE</b><br>centered text<br>rounded weirdly<br>7px too high</div>
-    <div><b>CARD TWO</b><br>right-aligned<br>0.9° rotation<br>17px too low</div>
-    <div><b>CARD THREE</b><br>left-aligned<br>−1.4° rotation<br>vibes only</div>
-  </div>
-  <p class="caption">no grid was consulted. no baseline was honoured. no designer was informed.</p>
-</div>
-
-<div class="crime">
-  <h2>💼 OFFICIAL BUSINESS CARD 💼</h2>
-  <div class="bizcard">
-    <span class="wm">💦</span>
-    <div class="nm">MOIST ZONE™</div>
-    <div class="ttl">~ Practical 3D Printing &amp; Hygroscopy Solutions ~</div>
-    <div class="info">DIRECTOR OF DAMPNESS<br>TEL: 1-800-LATCH-ME<br>WWW.MOISTZONE.GEOCITIES.COM<br>"IF IT AIN'T TACKY, IT AIN'T ADHERED"</div>
-    <div style="clear:both"></div>
-  </div>
-  <p class="caption">brushed metal · double gold border · asymmetric radius · 45° drop shadow · Papyrus, Comic Sans and Impact, all present, all fighting</p>
-</div>
-
-<div class="crime">
-  <h2>📢 NESTED MARQUEES 📢</h2>
-  <marquee class="mq1" scrollamount="4" direction="right"><marquee class="mq2" scrollamount="9" width="330">💦 IT MOVES INSIDE THE THING THAT MOVES 💦</marquee></marquee>
-  <p style="text-align:center;margin-top:12px" class="gradtext">and the text has a seven-colour gradient, because why on earth would it not</p>
-</div>
-
 <div class="panel">
   <h2>🎵 SITE THEME SONG 🎵</h2>
   <p>It is a MIDI. It is not a good MIDI. It was <b>extruded</b>, not composed.</p>
@@ -418,7 +323,7 @@ marquee{display:block}
 <div class="footer">
   <p><span class="counter" id="cnt2">0000000</span> souls have been moistened</p>
   <p style="font-family:'Papyrus',fantasy;font-size:16px;color:#7b00ff">"A 3d model is like a place cell, you first need a gridcell to make it work"</p>
-  <p>© 1998–2026 THE MOIST ZONE™ · A Damp Boyfriend Production<br>Handcrafted in Comic Sans · No filament was dried in the making of this website</p>
+  <p>© 1998–2026 THE MOIST ZONE™ · A Damp Ratto Production<br>Handcrafted in Comic Sans · No filament was dried in the making of this website</p>
   <p><span class="blink">🔒 LATCH RESPONSIBLY 🔒</span></p>
   <p style="font-size:12px;opacity:.75">(i love you. sorry about the word "moist". and "humectant". and all the others.)</p>
 </div>
@@ -753,6 +658,26 @@ function buildBoloni(){
     hair.rotateX(rr(-0.5,0.5));
     g.add(hair);
   }
+  /* ------------------------------------------------------------------
+     Something is inside. It is not visible from the outside, and it is
+     not visible in the wireframe preview by accident either — you have
+     to actually slice the thing open. Which she will. Obviously she will.
+     ------------------------------------------------------------------ */
+  const c=document.createElement('canvas'); c.width=1024; c.height=192;
+  const x=c.getContext('2d');
+  x.font='bold 74px "Comic Sans MS", cursive';
+  x.textAlign='center'; x.textBaseline='middle';
+  x.shadowColor='#ff2f9c'; x.shadowBlur=26;
+  x.fillStyle='#ffffff';
+  x.fillText("I knew you'd check in here ;)", 512, 96);
+  const secret=new THREE.Sprite(new THREE.SpriteMaterial({
+    map:new THREE.CanvasTexture(c), transparent:true, depthTest:false
+  }));
+  secret.name='secret';
+  secret.visible=false;
+  secret.scale.set(3.4,0.64,1);
+  secret.position.set(0,1.05,0);
+  g.add(secret);
   return g;
 }
 
@@ -823,6 +748,21 @@ function makeViewer(el, key, opts){
         m.material.wireframe=sliced;
         m.material.color.set(sliced?0x00ff88:m.userData.c);
       });
+      const secret = model && model.getObjectByName('secret');
+      if(secret){
+        secret.visible = sliced;
+        if(sliced){
+          api.hud('SLICER PREVIEW: ON — anomaly detected inside the mesh at Z=21mm');
+          const ad=document.getElementById('advice');
+          if(ad) ad.innerHTML='<span class="tag" style="background:#7b00ff">💌 FOUND INSIDE THE MESH 💌</span><br>'
+            +'<b>"I knew you\'d check in here ;)"</b><br><span style="font-size:14.5px">'
+            +'you sliced open the one model nobody would admit to submitting. of course you did. '
+            +'that is exactly why you are good at this. 💦</span>';
+          try{ tone(660,0,.14,'triangle'); tone(880,.15,.14,'triangle'); tone(1320,.3,.4,'triangle'); }catch(e){}
+          try{ rain(18); }catch(e){}
+          return;
+        }
+      }
       api.hud('SLICER PREVIEW: '+(sliced?'ON — 41,208 layers · 4h 12m · 38.2m of filament':'OFF'));
     },
     supports(){
