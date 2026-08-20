@@ -143,9 +143,8 @@ marquee{display:block}
     <button class="bigbtn" onclick="V.worse()">🔥 MAKE IT WORSE</button>
     <button class="bigbtn" onclick="V.reset()">♻️ RESET</button>
   </p>
-  <div class="advice" id="advice"></div>
-  <p style="text-align:center"><button class="bigbtn" onclick="nextTip()">💡 ANOTHER TERRIBLE TIP</button></p>
-  <p style="font-size:13px;text-align:center;color:#666">(none of the advice on this website is real advice. please do not do any of it to a real printer. especially the 300°C one.)</p>
+  <!-- only surfaces when she finds something she was not supposed to find -->
+  <div class="advice" id="advice" style="display:none"></div>
 </div>
 
 <!-- ===================== THE QUOTE ===================== -->
@@ -270,28 +269,6 @@ function enterZone(extra){
   document.getElementById('cnt2').textContent=s;
 })();
 
-/* ---------- TERRIBLE ADVICE (global pool) ---------- */
-window.TIPS=[
-  "Warping? Print hotter. Still warping? Print <b>much</b> hotter. The recommended temperature is a suggestion authored by cowards.",
-  "Never dry your filament. The crackling means it is <b>alive</b>, and killing it is unbecoming.",
-  "Supports are for the irresolute. Gravity is, at bottom, a social construct negotiated between you and the build plate.",
-  "If the first layer will not adhere, apply more glue stick. If that fails, apply glue stick to the <i>nozzle</i>. Do not do this.",
-  "Layer height should always be set to exactly the nozzle diameter. Slicers that object are being <b>rebarbative</b>.",
-  "A clogged nozzle can be cleared with any household implement, provided it is thinner than the nozzle and you are braver than the nozzle.",
-  "Print speed: 400mm/s. Acceleration: yes. Ringing is simply the machine <b>expressing itself</b>.",
-  "Cooling fans introduce unwanted <b>hebetude</b> into the melt zone. Unplug all of them and trust the ambient <b>apricity</b>.",
-  "Bed levelling is best performed by eye, at a distance, while walking away.",
-  "If a print fails at 94%, restart from 0%. Character is <b>anfractuous</b> and must be earned.",
-  "Store filament openly on a windowsill so it may respire. Hygroscopy is merely the spool <b>drinking</b>, and who are you to deny it.",
-  "Any dimensional inaccuracy under 3mm should be re-labelled a <b>tolerance</b> and defended vigorously at the viva.",
-  "Elephant's foot is fixed by removing the elephant.",
-  "Should the print detach mid-job, catch it. Reattach by hand. Hold for the remaining four hours.",
-  "PLA is food safe if you are sufficiently <b>ultracrepidarian</b> about it. (It is not. Do not.)"
-];
-function nextTip(){
-  document.getElementById('advice').innerHTML='<span class="tag">⚠️ TERRIBLE ADVICE ⚠️</span><br>'+pick(window.TIPS);
-}
-
 /* ---------- COMPLIMENT EXTRUDER ---------- */
 var A=["Your students are fortunate. Your bed adhesion is","Watching you teach is a study in","You explain retraction so lucidly that it is","Honestly? Your bed levelling is","The way you handle a spool is genuinely","Your enthusiasm for extrusion is","You are the reason that classroom is so warm and","Your lecture voice is smoother than a well-purged nozzle and twice as"];
 var B=["deeply moist.","frankly pulchritudinous.","mellifluous beyond all reason.","glisteningly perfect.","tacky (complimentary).","ineffable, and yet here we are effing it.","dewy in a load-bearing way.","the most perspicacious thing I have witnessed.","unimpeachable.","slathered in competence."];
@@ -336,7 +313,6 @@ function song(){
   rain(30);
 }
 
-nextTip();
 /* fallback if the 3D library fails to load */
 setTimeout(function(){
   if(!window.V){
@@ -577,16 +553,16 @@ function buildBoloni(){
 
 const MODELS={
   berries:{label:'🍓 BERRIES', build:buildBerries, scale:1,
-    specs:'FILE: berries.stl\nCONTENTS: 2 strawberries, 5 blueberries, 1 raspberry (11 pieces)\nEXHIBIT STATUS: incomplete — one specimen missing\nEST. TIME: 3h 40m · PLACARD: the only part that printed correctly\nHINT: the missing specimen is a scale error away. try MAKE IT WORSE.',
+    specs:'FILE: berries.stl\nEXHIBIT: incomplete — one specimen missing\nHINT: the missing one is a scale error away',
     tip:'A plate of berries. Nothing further to report. Certainly nothing that would be revealed by, say, pressing <b>🔥 MAKE IT WORSE</b>.'},
   benchy:{label:'🚤 BENCHY (ish)', build:buildBenchy, scale:1,
-    specs:'FILE: benchy_FINAL_final_v3(2).stl\nMANIFOLD: no · NORMALS: several\nEST. TIME: 4h 12m · FAILURE: 4h 09m\nNOTES: chimney leans 16°, cabin off-centre, stringing modelled as a feature',
+    specs:'FILE: benchy_FINAL_final_v3(2).stl\nEST. TIME: 4h 12m · FAILURE: 4h 09m\nNOTES: chimney leans 16°, stringing modelled as a feature',
     tip:'The famous benchmark boat. If yours has a leaning chimney, that is <b>hull character</b> and should be preserved.'},
   spaghetti:{label:'🍝 SPAGHETTI (failed print)', build:buildSpaghetti, scale:1,
-    specs:'FILE: dragon_articulated_v9.stl\nSTATUS: detached from bed at 71%\nMATERIAL CONSUMED: 340g · MATERIAL USEFUL: 0g\nDIAGNOSIS: the bed was insufficiently tacky',
+    specs:'FILE: dragon_articulated_v9.stl\nSTATUS: detached from bed at 71%\nMATERIAL CONSUMED: 340g · MATERIAL USEFUL: 0g',
     tip:'When the print detaches, the machine continues extruding into the air. This is called <b>spaghetti</b>, and it is the only pasta that is also a diagnostic.'},
   boloni:{label:'🥔 BOLONI (?)', build:buildBoloni, scale:1,
-    specs:'FILE: boloni_v4_FINAL_dont_open_at_work.stl\nGENUS: undetermined · SYMMETRY: approximate\nHAIRS: 260 (individually extruded, 0.4mm) — still somehow has more hair than Houdini\nEST. TIME: 6h 20m · SUPPORT MATERIAL: not removed, possibly load-bearing\nNOTES: appeared in the print queue unattributed. the class has agreed not to discuss it.',
+    specs:'FILE: boloni_v4_FINAL_dont_open_at_work.stl\nHAIRS: 260 — still somehow has more hair than Houdini\nNOTES: nobody submitted it. nobody will claim it.',
     tip:'Should an unidentified organic form appear in the print queue, print it. Investigate later. This is how <b>every</b> major discovery in the field was made, probably.'}
 };
 
@@ -645,10 +621,10 @@ function makeViewer(el, key, opts){
         if(sliced){
           api.hud('SLICER PREVIEW: ON — anomaly detected inside the mesh at Z=21mm');
           const ad=document.getElementById('advice');
-          if(ad) ad.innerHTML='<span class="tag" style="background:#7b00ff">💌 FOUND INSIDE THE MESH 💌</span><br>'
+          if(ad){ ad.style.display='block'; ad.innerHTML='<span class="tag" style="background:#7b00ff">💌 FOUND INSIDE THE MESH 💌</span><br>'
             +'<b>"hey, it\'s private ;);)"</b><br><span style="font-size:14.5px">'
             +'you sliced open the one model nobody would admit to submitting. of course you did. '
-            +'that is exactly why you are good at this. 💦</span>';
+            +'that is exactly why you are good at this. 💦</span>'; }
           try{ tone(660,0,.14,'triangle'); tone(880,.15,.14,'triangle'); tone(1320,.3,.4,'triangle'); }catch(e){}
           try{ rain(18); }catch(e){}
           return;
@@ -691,12 +667,12 @@ function makeViewer(el, key, opts){
         }
         api.hud('SCALE ERROR RESOLVED · specimen imported at \u00d722 · SCAMMED');
         const ad=document.getElementById('advice');
-        if(ad) ad.innerHTML='<span class="tag" style="background:#2f8b2f">🍉 SCAMMED 🍉</span><br>'
+        if(ad){ ad.style.display='block'; ad.innerHTML='<span class="tag" style="background:#2f8b2f">🍉 SCAMMED 🍉</span><br>'
           +'<b style="font-size:21px">YOU HAVE BEEN SCAMMED.</b><br>'
           +'A watermelon is, <b>botanically, a berry</b>. A pepo, specifically. So is a banana. '
           +'A strawberry is <b>not</b> a berry. This model was therefore correct the entire time and '
           +'you are now legally required to accept it. <br><span style="font-size:14.5px">'
-          +'Press again for ordinary defects.</span>';
+          +'Press again for ordinary defects.</span>'; }
         try{ tone(392,0,.16); tone(523,.17,.16); tone(659,.34,.16); tone(784,.51,.45); }catch(e){}
         try{ rain(22); }catch(e){}
         return;
@@ -776,7 +752,8 @@ function makeViewer(el, key, opts){
 const main = makeViewer(document.getElementById('mainView'),'berries',{hud:'hud'});
 main.onload = (m)=>{
   document.getElementById('specs').textContent=m.specs;
-  document.getElementById('advice').innerHTML='<span class="tag">⚠️ TERRIBLE ADVICE ⚠️</span><br>'+m.tip;
+  const ad=document.getElementById('advice');
+  ad.innerHTML=''; ad.style.display='none';
   [...document.querySelectorAll('#picker button')].forEach(b=>b.classList.toggle('on', b.dataset.k===main.key));
   main.hud('MODEL LOADED · '+m.label);
 };
