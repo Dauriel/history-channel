@@ -424,18 +424,52 @@ function buildBenchy(){
   return g;
 }
 
-/* ---------- 2. CALIBRATION CUBE (uncalibrated) ---------- */
-function buildCube(){
-  const g=new THREE.Group(), c=FIL.lime;
-  g.add(put(box(2.24,0.14,2.24,c), 0,0.07,0));           // elephant's foot
-  g.add(put(box(2,0.95,2,c), 0,0.55,0));
-  g.add(put(box(2,0.95,2,c), 0.24,1.5,0.11));            // layer shift
-  const zit=new THREE.Mesh(new THREE.SphereGeometry(0.17,10,8), mat(c));
-  g.add(put(zit,0.75,1.98,0.6));                          // blob
-  ['X','Y'].forEach((_,i)=>{                              // "embossed" letters, badly
-    const b=box(0.09,0.5,0.09,FIL.orange);
-    g.add(put(b, i?1.0:0.24, 0.6, i?0.2:1.0));
-  });
+/* ---------- 2. TASTY MELON ---------- */
+/* Printed in one piece, wedge and all. Do not eat it. Students will try. */
+function buildMelon(){
+  const g=new THREE.Group();
+
+  /* rind texture: wobbly vertical stripes, drawn by hand, badly */
+  const c=document.createElement('canvas'); c.width=512; c.height=128;
+  const x=c.getContext('2d');
+  x.fillStyle='#6fbf3f'; x.fillRect(0,0,512,128);
+  x.fillStyle='#2f6b1f';
+  for(let s=0;s<9;s++){
+    x.beginPath();
+    const cx=s*57+10;
+    x.moveTo(cx,0);
+    for(let y=0;y<=128;y+=8) x.lineTo(cx+Math.sin(y*0.09+s)*7, y);
+    for(let y=128;y>=0;y-=8) x.lineTo(cx+16+Math.sin(y*0.09+s)*7, y);
+    x.closePath(); x.fill();
+  }
+  const rindTex=new THREE.CanvasTexture(c);
+
+  const CUT=Math.PI*0.44;                                   // the missing wedge
+  const rind=new THREE.Mesh(
+    new THREE.SphereGeometry(1.06,44,28,CUT,Math.PI*2-CUT),
+    new THREE.MeshLambertMaterial({map:rindTex,side:THREE.DoubleSide}));
+  rind.scale.set(1,0.93,1); rind.position.y=1.0; g.add(rind);
+
+  const flesh=new THREE.Mesh(new THREE.SphereGeometry(0.99,36,24),
+    new THREE.MeshLambertMaterial({color:0xff5b6e}));
+  flesh.scale.set(1,0.93,1); flesh.position.y=1.0; g.add(flesh);
+
+  /* seeds, individually placed, none of them where you would want them */
+  const seedMat=new THREE.MeshLambertMaterial({color:0x241a12});
+  for(let k=0;k<26;k++){
+    const a=CUT*rr(-0.1,1.1), r=rr(0.35,0.9), yy=rr(-0.7,0.7);
+    const seed=new THREE.Mesh(new THREE.SphereGeometry(0.055,7,6), seedMat);
+    seed.scale.set(1,1.5,0.5);
+    seed.position.set(Math.cos(a)*r, 1.0+yy, Math.sin(a)*r);
+    seed.rotation.y=-a; g.add(seed);
+  }
+
+  const stem=cyl(0.075,0.11,0.3,0x6b4b2a,10);
+  stem.rotation.z=0.35; g.add(put(stem,0.06,1.98,0));
+
+  /* an unrequested purge blob, fused to the rind forever */
+  const blob=new THREE.Mesh(new THREE.SphereGeometry(0.15,10,8), mat(FIL.lime));
+  g.add(put(blob,-0.9,0.28,0.45));
   return g;
 }
 
@@ -554,9 +588,9 @@ const MODELS={
   benchy:{label:'🚤 BENCHY (ish)', build:buildBenchy, scale:1,
     specs:'FILE: benchy_FINAL_final_v3(2).stl\nMANIFOLD: no · NORMALS: several\nEST. TIME: 4h 12m · FAILURE: 4h 09m\nNOTES: chimney leans 16°, cabin off-centre, stringing modelled as a feature',
     tip:'The famous benchmark boat. If yours has a leaning chimney, that is <b>hull character</b> and should be preserved.'},
-  cube:{label:'🧊 CALIBRATION CUBE', build:buildCube, scale:1,
-    specs:'FILE: 20mm_cube.stl (measures 21.3 × 19.8 × 22.1)\nELEPHANT\'S FOOT: yes · LAYER SHIFT: at Z=10mm\nEST. TIME: 22m · ACTUAL: 22m, wrongly',
-    tip:'Should your calibration cube come out the wrong size, recalibrate the <b>ruler</b>. It is by far the cheaper component.'},
+  melon:{label:'🍈 TASTY MELON', build:buildMelon, scale:1,
+    specs:'FILE: tasty_melon_v2.stl\nWATERTIGHT: no · EDIBLE: no · CONVINCING: from 3m\nSEEDS: 26 (each a separate object, each requiring supports)\nEST. TIME: 9h 14m · MATERIAL: 3 colours, 2 filament changes, 1 regret\nNOTES: a student attempted to eat this. the wedge is not a design feature, it is where the print failed.',
+    tip:'Multi-colour prints are achieved by pausing at the correct layer and swapping filament by hand. Set the pause at the wrong layer and you have instead produced a <b>melon-adjacent object</b>, which is arguably more interesting.'},
   vase:{label:'🏺 VASE (leaning)', build:buildVase, scale:1,
     specs:'FILE: vase_mode_definitely_watertight.stl\nWALL: 0.4mm · WATERTIGHT: emphatically not\nLEAN: 6.3° · SEAM: 18° of open sky\nHOLDS WATER: for approximately 4 seconds',
     tip:'Vase mode produces a single continuous wall, hence a vase that is <b>hydrophobic in spirit only</b>. Line it with hope.'},
@@ -615,7 +649,10 @@ function makeViewer(el, key, opts){
       eachMesh(m=>{
         if(m.userData.c===undefined) m.userData.c=m.material.color.getHex();
         m.material.wireframe=sliced;
+        if(m.userData.map0===undefined) m.userData.map0=m.material.map||null;
+        m.material.map = sliced ? null : (layered?LAYER_TEX:m.userData.map0);
         m.material.color.set(sliced?0x00ff88:m.userData.c);
+        m.material.needsUpdate=true;
       });
       const secret = model && model.getObjectByName('secret');
       if(secret){
@@ -649,7 +686,11 @@ function makeViewer(el, key, opts){
     },
     layers(){
       layered=!layered;
-      eachMesh(m=>{ m.material.map=layered?LAYER_TEX:null; m.material.needsUpdate=true; });
+      eachMesh(m=>{
+        if(m.userData.map0===undefined) m.userData.map0=m.material.map||null;
+        m.material.map = layered ? LAYER_TEX : m.userData.map0;
+        m.material.needsUpdate=true;
+      });
       api.hud('LAYER LINES: '+(layered?'0.3mm, visible from orbit':'hidden (cowardly)'));
     },
     worse(){
