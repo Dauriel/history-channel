@@ -16,7 +16,7 @@ A deliberately, aggressively cringe website built for the world's most wonderful
     Slice it open to find something written inside.
 - Slice / Add Supports / Layer Lines / **Make It Worse** controls.
 - Dangerously bad printing advice. None of it is real advice.
-- A load-bearing aphorism: *"A 3d model is like a place cell, you first need a gridcell
+- A load-bearing aphorism: *"A 3d model is like a place-cell, you first need a grid-cell
   to make it work."*
 - A Design Corner: a spinning logo, Impact at −6px letter-spacing, 235%/78% text scaling,
   six stacked bevel shadows.
