@@ -3,7 +3,7 @@
 A deliberately, aggressively cringe website built for the world's most wonderful
 3D printing teacher, after a very long week of teaching.
 
-**Live:** https://dauriel.github.io/moist/
+**Live:** https://dauriel.github.io/history-channel/
 
 ### Contents
 
