@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>💦 THE MOIST ZONE 💦 :: A Hydration Station For The World's Dampest 3D Printing Educator ~*~</title>
+<meta name="description" content="welcome 2 my moist lil corner of the world wide web. please latch responsibly.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💦</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Bungee+Shade&display=swap" rel="stylesheet">
+<style>
+:root{
+  --goo:#7fffd4; --slime:#ff00ff; --wet:#00ffff; --yolk:#ffe600;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;overflow-x:hidden}
+body{
+  font-family:"Comic Sans MS","Comic Neue","Chalkboard SE",cursive;
+  background:
+    repeating-linear-gradient(45deg, rgba(255,0,255,.10) 0 22px, rgba(0,255,255,.10) 22px 44px),
+    linear-gradient(-45deg,#ff6ec7,#00e5ff,#7fff00,#ffe600,#ff6ec7);
+  background-size:auto, 400% 400%;
+  animation:gradientGoo 9s ease infinite;
+  color:#1a0033;
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>💧</text></svg>") 8 8, auto;
+}
+@keyframes gradientGoo{0%{background-position:0 0,0% 50%}50%{background-position:0 0,100% 50%}100%{background-position:0 0,0% 50%}}
+
+/* ===== ENTRY PORTAL ===== */
+#portal{position:fixed;inset:0;z-index:9999;background:rgba(10,0,30,.94);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+#portal .box{background:linear-gradient(#fff,#ffe6ff);border:8px ridge var(--slime);box-shadow:0 0 0 6px var(--wet),0 0 60px #ff00ff;padding:26px;max-width:560px;transform:rotate(-1.5deg)}
+#portal h1{font-size:clamp(22px,6vw,40px);margin:0 0 10px;color:#c1006f;text-shadow:2px 2px 0 var(--yolk)}
+#portal p{font-size:17px;line-height:1.5}
+.enterbtn{display:block;width:100%;margin:10px 0;padding:14px;font-family:inherit;font-weight:bold;font-size:19px;cursor:pointer;border:5px outset #ff00ff;background:linear-gradient(#fffb00,#ff9d00);color:#5a003a;text-shadow:1px 1px 0 #fff}
+.enterbtn:hover{background:linear-gradient(#00ffea,#00ff6a);transform:scale(1.04) rotate(1deg)}
+
+/* ===== BANNERS ===== */
+.topbar{background:#000;color:#0f0;font-family:"Courier New",monospace;font-size:14px;padding:6px 0;border-bottom:4px double #0f0;overflow:hidden;white-space:nowrap}
+.wordart{
+  text-align:center;font-family:"Bungee Shade","Comic Sans MS",cursive;
+  font-size:clamp(30px,9vw,86px);line-height:1.05;margin:14px 8px 6px;
+  background:linear-gradient(#fff700,#ff00c8 45%,#00ffe1);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:2px #3d0033;
+  filter:drop-shadow(4px 4px 0 #00ffff) drop-shadow(8px 8px 0 rgba(255,0,255,.6));
+  animation:wobble 2.6s ease-in-out infinite;
+}
+@keyframes wobble{0%,100%{transform:rotate(-2.2deg) skewX(-3deg)}50%{transform:rotate(2.2deg) skewX(3deg) scale(1.03)}}
+.blink{animation:blink 1s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+.sub{text-align:center;font-size:clamp(14px,3.4vw,22px);font-weight:bold;color:#5c0049;text-shadow:1px 1px 0 #fff;margin:0 12px 14px}
+
+/* ===== LAYOUT ===== */
+.wrap{max-width:940px;margin:0 auto;padding:0 12px 40px}
+.panel{
+  background:linear-gradient(180deg,#ffffff,#e9fbff);
+  border:6px ridge var(--slime);
+  box-shadow:9px 9px 0 rgba(0,0,0,.35), inset 0 0 0 3px var(--wet);
+  padding:18px;margin:22px 0;
+}
+.panel:nth-child(even){transform:rotate(.5deg)}
+.panel:nth-child(odd){transform:rotate(-.5deg)}
+.panel h2{
+  margin:-18px -18px 14px;padding:10px;text-align:center;
+  font-size:clamp(17px,4.6vw,28px);color:#fff;
+  background:repeating-linear-gradient(90deg,#ff0090 0 16px,#7b00ff 16px 32px);
+  text-shadow:2px 2px 0 #000;border-bottom:5px double #fff;
+}
+.panel p,.panel li{font-size:17px;line-height:1.62}
+b,strong{color:#c1006f}
+.moistword{color:#008b8b;font-weight:bold;text-decoration:underline wavy #ff00ff;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{color:#ff0090;letter-spacing:.5px}}
+
+/* ===== GLOSSARY ===== */
+dl.gloss dt{font-weight:bold;font-size:19px;color:#7b00ff;margin-top:14px;text-shadow:1px 1px 0 #ffe600}
+dl.gloss dd{margin:4px 0 0 18px;font-size:16.5px;border-left:5px solid var(--goo);padding-left:10px}
+
+/* ===== METERS & BUTTONS ===== */
+.bigbtn{display:inline-block;font-family:inherit;font-weight:bold;font-size:18px;padding:13px 20px;margin:8px 6px;
+  border:5px outset #00d4ff;background:linear-gradient(#ff5ecf,#ff0090);color:#fff;text-shadow:1px 1px 0 #000;cursor:inherit}
+.bigbtn:hover{background:linear-gradient(#7fff00,#00c46a);transform:rotate(-2deg) scale(1.06)}
+.bigbtn:active{border-style:inset}
+.readout{margin-top:14px;padding:12px;background:#000;color:#0f0;font-family:"Courier New",monospace;font-size:16px;min-height:56px;border:3px inset #0f0}
+input[type=range]{width:100%;height:34px;accent-color:#ff0090}
+.meterbox{background:#000;border:4px inset #999;padding:6px}
+.meterfill{height:26px;background:linear-gradient(90deg,#00ffea,#7fff00,#ffe600,#ff0090);width:12%;transition:width .25s;box-shadow:0 0 12px #fff inset}
+.cert{background:#fffdf0;border:14px double #b8860b;padding:22px;text-align:center;font-family:"Papyrus","Comic Sans MS",fantasy}
+.cert h3{font-size:clamp(19px,5vw,32px);margin:.2em;color:#8b0057;letter-spacing:2px}
+.cert .sig{font-family:"Brush Script MT",cursive;font-size:26px;border-top:2px solid #333;display:inline-block;margin-top:16px;padding-top:4px}
+table.book{width:100%;border-collapse:collapse;font-size:15.5px}
+table.book td{border:3px groove #ff00ff;padding:9px;vertical-align:top}
+table.book td:first-child{width:34%;background:#fff0fb;font-weight:bold}
+.construction{text-align:center;font-size:clamp(15px,4vw,22px);background:repeating-linear-gradient(45deg,#ffd400 0 20px,#000 20px 40px);
+  padding:12px;color:#fff;-webkit-text-stroke:1px #000;font-weight:bold;text-shadow:2px 2px 0 #000}
+.footer{text-align:center;font-size:14px;color:#3d0033;padding:20px 10px 60px;line-height:1.8}
+.counter{font-family:"Courier New",monospace;background:#000;color:#0f0;padding:5px 9px;border:2px solid #0f0;letter-spacing:3px}
+.droplet{position:fixed;pointer-events:none;z-index:9998;font-size:22px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(360deg);opacity:0}}
+.nag{position:fixed;bottom:14px;right:14px;z-index:9997;max-width:290px;background:#fffbe6;border:5px ridge #ff0090;box-shadow:6px 6px 0 rgba(0,0,0,.4);padding:12px;font-size:15px;display:none}
+.nag b{display:block;margin-bottom:6px}
+.nag button{font-family:inherit;margin-top:8px;padding:7px 11px;border:3px outset #00d4ff;background:#7fff00;font-weight:bold;cursor:inherit}
+.ru{background:#fff;border:5px dashed #d52b1e;padding:14px}
+.ru .pair{font-size:18px;margin:9px 0;border-bottom:2px dotted #0039a6;padding-bottom:7px}
+.ru .cyr{color:#0039a6;font-weight:bold}
+marquee{display:block}
+
+/* ============================================================
+   🎨 THE DESIGN CRIMES DEPARTMENT 🎨
+   every rule below is deliberate. none of it is a mistake.
+   ============================================================ */
+.crime{border:6px ridge #ff0090;background:#fff;padding:18px;margin:22px 0;box-shadow:11px 7px 0 rgba(0,0,0,.4)}
+.crime h2{margin:-18px -18px 14px;padding:10px;text-align:center;font-size:clamp(17px,4.6vw,28px);color:#fff;
+  background:repeating-linear-gradient(90deg,#ff0090 0 16px,#7b00ff 16px 32px);text-shadow:2px 2px 0 #000;border-bottom:5px double #fff}
+
+/* FONT SALAD: 4 typefaces, one sentence */
+.salad{font-size:23px;line-height:2.1;text-align:justify;word-spacing:0}
+.salad .f1{font-family:"Papyrus",fantasy}
+.salad .f2{font-family:"Impact","Arial Black",sans-serif;letter-spacing:-2.5px}
+.salad .f3{font-family:"Times New Roman",serif;font-style:italic}
+.salad .f4{font-family:"Courier New",monospace;font-size:15px}
+.salad .f5{font-family:"Brush Script MT",cursive;font-size:31px}
+
+/* KERNING CRIME SCENE */
+.keming{font-family:"Impact","Arial Black",sans-serif;font-size:clamp(26px,8vw,62px);text-align:center;
+  letter-spacing:-6px;color:#c9c94a;text-shadow:3px 3px 0 #b0b0ff;margin:12px 0}
+.stretchy{font-family:"Arial Black",sans-serif;font-size:clamp(22px,7vw,52px);text-align:center;
+  transform:scaleX(2.35) scaleY(.78);transform-origin:center;margin:26px 0 34px;color:#0a0}
+
+/* RIVERS OF JUSTIFICATION */
+.rivers{text-align:justify;word-spacing:1.9em;font-size:18px;line-height:1.35;hyphens:none;
+  font-family:"Times New Roman",serif;column-count:2;column-gap:4px;column-rule:3px dotted #f0f}
+
+/* LOW CONTRAST HALL OF FAME */
+.contrastfail{background:#ffe600;color:#fff5a0;padding:16px;font-size:19px;text-shadow:0 0 1px #fff;font-weight:bold}
+.contrastfail2{background:#7b00ff;color:#6a00e0;padding:16px;font-size:19px;font-weight:bold}
+
+/* ALIGNMENT: three columns, all slightly wrong */
+.badgrid{display:flex;flex-wrap:wrap;gap:3px;align-items:flex-end;margin:14px 0}
+.badgrid > div{flex:1 1 180px;background:#e9fbff;border:3px solid #000;padding:10px;font-size:15px}
+.badgrid > div:nth-child(1){margin-top:0;border-radius:22px 0 9px 40px;text-align:center;transform:translateY(-7px)}
+.badgrid > div:nth-child(2){margin-top:17px;border-radius:2px;text-align:right;transform:translateX(4px) rotate(.9deg)}
+.badgrid > div:nth-child(3){margin-top:6px;border-radius:0 55px 3px 3px;text-align:left;transform:translateY(11px) rotate(-1.4deg)}
+
+/* THE PALETTE OF PAIN */
+.palette{display:flex;flex-wrap:wrap;margin:14px 0;border:4px inset #999}
+.palette div{flex:1 1 90px;height:74px;display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-family:"Courier New",monospace;font-weight:bold}
+
+/* STRETCHED "STOCK PHOTOGRAPHY" */
+.stockphoto{width:100%;height:132px;background:linear-gradient(135deg,#ff0090,#00ffea);border:5px groove #ffe600;
+  display:flex;align-items:center;justify-content:center;overflow:hidden}
+.stockphoto span{font-size:96px;transform:scaleX(3.6) scaleY(.62);display:block}
+.caption{font-size:11px;text-align:center;font-family:"Times New Roman",serif;font-style:italic;color:#888;margin-top:2px}
+
+/* SPINNING LOGO OF DOOM */
+.spinlogo{width:112px;height:112px;margin:10px auto;border-radius:50%;
+  background:conic-gradient(#ff0090,#ffe600,#00ffea,#7fff00,#ff0090);
+  display:flex;align-items:center;justify-content:center;font-size:52px;
+  animation:spin 2.4s linear infinite;box-shadow:0 0 26px #ff0090, inset 0 0 22px #fff}
+@keyframes spin{to{transform:rotate(360deg) scale(1.06)}}
+
+/* BUSINESS CARD (a hate crime) */
+.bizcard{width:min(100%,420px);margin:12px auto;background:linear-gradient(160deg,#c0c0c0,#f7f7f7 40%,#9a9a9a);
+  border:4px double #b8860b;padding:16px;box-shadow:8px 8px 14px rgba(0,0,0,.5);border-radius:0 26px 0 26px}
+.bizcard .nm{font-family:"Papyrus",fantasy;font-size:25px;color:#004080;text-shadow:2px 2px 3px #aaa;letter-spacing:3px}
+.bizcard .ttl{font-family:"Comic Sans MS",cursive;font-size:15px;color:#8b0057}
+.bizcard .info{font-family:"Impact",sans-serif;font-size:13px;letter-spacing:1.4px;color:#333;margin-top:9px;line-height:1.7}
+.bizcard .wm{font-size:34px;float:right;transform:rotate(-17deg);opacity:.35;filter:blur(.6px)}
+
+/* BEVEL & EMBOSS APPRECIATION SOCIETY */
+.bevel{font-family:"Arial Black",sans-serif;font-size:clamp(20px,6vw,40px);text-align:center;color:#d4d4d4;
+  text-shadow:1px 1px 0 #fff,2px 2px 0 #bbb,3px 3px 0 #999,4px 4px 0 #777,5px 5px 0 #555,6px 6px 8px rgba(0,0,0,.7);
+  background:linear-gradient(#f0f0f0,#8a8a8a);padding:16px;border:6px outset #ccc;margin:12px 0}
+
+/* LENS FLARE (mandatory) */
+.flare{position:relative;overflow:hidden}
+.flare::after{content:"✨";position:absolute;top:-10px;right:6px;font-size:52px;
+  filter:blur(1px);animation:twinkle 1.4s ease-in-out infinite}
+@keyframes twinkle{50%{transform:scale(1.5) rotate(22deg);opacity:.5}}
+
+/* HORIZONTAL RULE, EMOJI EDITION */
+.emojirule{text-align:center;font-size:19px;letter-spacing:-2px;margin:16px 0;overflow:hidden;white-space:nowrap}
+
+/* THE ALL-CAPS BOLD ITALIC UNDERLINE CENTERED COMBO */
+.combo{text-transform:uppercase;font-weight:bold;font-style:italic;text-decoration:underline overline wavy #f0f;
+  text-align:center;font-size:21px;letter-spacing:4px;line-height:2.4;color:#ff4500;font-family:"Comic Sans MS",cursive}
+
+/* NESTED MARQUEE HELL */
+.mq1{background:#000;color:#0f0;border:3px solid #0f0}
+.mq2{background:#ff0090;color:#ffe600;font-size:20px;font-weight:bold}
+
+/* DROP CAP DISASTER */
+.dropcap::first-letter{float:left;font-family:"Papyrus",fantasy;font-size:81px;line-height:.72;padding:6px 9px 0 0;
+  color:#ff0090;text-shadow:3px 3px 0 #00ffea}
+
+/* GRADIENT ON EVERYTHING */
+.gradtext{background:linear-gradient(90deg,red,orange,yellow,green,blue,indigo,violet);
+  -webkit-background-clip:text;background-clip:text;color:transparent;font-weight:bold;font-size:22px}
+
+</style>
+</head>
+<body>
+
+<!-- ==================== ENTRY PORTAL ==================== -->
+<div id="portal">
+  <div class="box">
+    <h1>⚠️ ВНИМАНИЕ ⚠️<br>WARNING: THIS SITE IS EXTREMELY <span class="blink">MOIST</span></h1>
+    <p>By entering, you consent to encountering the following: <b>moisture</b>, <b>hydration</b>, <b>latching</b>, <b>dampness</b>, <b>ooze</b>, <b>squelch</b>, and at least one (1) unsolicited <b>dollop</b>.</p>
+    <p style="background:#ffe600;border:3px dashed #000;padding:8px;font-size:15px">🎨 <b>ADDITIONAL HAZARD:</b> this website contains Papyrus, Impact, Comic Sans, non-uniform text scaling, justified rivers, bevel &amp; emboss, nested marquees and a 3px gutter. If you have <b>an eye for beauty</b>, look away. 🎨</p>
+    <p><i>Recommended for teachers of practical 3D printing courses who have had a long week.</i></p>
+    <button class="enterbtn" onclick="enterZone()">✅ YES, MOISTEN ME</button>
+    <button class="enterbtn" onclick="enterZone(true)">💦 YES, BUT MOISTER 💦</button>
+    <p style="font-size:13px">(there is no third option. the latch has closed behind you.)</p>
+  </div>
+</div>
+
+<div class="topbar"><marquee scrollamount="7">💧 you are visitor number <span id="cnt">0000000</span> 💧 please remain hydrated 💧 the bed is warm and the bed is damp 💧 best viewed in Netscape Navigator 4.0 at 800x600 💧 this site is a proud member of the WET WEB RING 💧 no refunds on moisture 💧</marquee></div>
+
+<h1 class="wordart">💦 THE MOIST ZONE 💦</h1>
+<p class="sub">～*～ a <span class="moistword">hydration</span> station lovingly hand-extruded for the world's dampest 3D printing educator ～*～<br><span class="blink">★ NEW ★</span> now with 40% more <span class="moistword">latch</span> ★</p>
+
+<div class="wrap">
+
+<!-- ==================== FORECAST ==================== -->
+<div class="panel">
+  <h2>🌫️ TODAY'S PERSONAL MOISTURE FORECAST 🌫️</h2>
+  <p>Good morning, <b>teacher</b>. Today's outlook is <span class="moistword">damp</span> with a 90% chance of <span class="moistword">ooze</span>.</p>
+  <p style="font-size:19px"><b>Ambient <span class="moistword">moisture</span>:</b> <span id="fc1">…</span><br>
+     <b>Recommended <span class="moistword">hydration</span> events:</b> <span id="fc2">…</span><br>
+     <b><span class="moistword">Latch</span> integrity:</b> <span id="fc3">…</span><br>
+     <b>Mouthfeel index:</b> <span id="fc4">…</span></p>
+  <button class="bigbtn" onclick="forecast()">🔮 RE-FORECAST MY MOISTURE 🔮</button>
+</div>
+
+<!-- ==================== GLOSSARY ==================== -->
+<div class="panel">
+  <h2>📚 GLOSSARY OF GENUINE 3D PRINTING TERMS 📚<br><small style="font-size:14px">(every single one of these is real. that is the problem.)</small></h2>
+  <p>Dearest educator: below are terms you must say <b>out loud</b>, <b>to students</b>, <b>with a straight face</b>, for the remainder of your course. We did not invent these. The industry did this to you.</p>
+  <dl class="gloss">
+    <dt>💧 Bed Adhesion</dt>
+    <dd>How well the <span class="moistword">warm</span>, <span class="moistword">damp</span> bed grips the thing you laid on it. Improved by <b>slathering</b> the bed with a thin <b>film</b> of glue stick. Say "the bed needs to be tacky" to a room of adults. Go on.</dd>
+    <dt>💧 Oozing</dt>
+    <dd>When the nozzle continues to <span class="moistword">secrete</span> filament it was not asked to secrete. Also called <b>drooling</b>. Also called <b>weeping</b>. The machine literally weeps.</dd>
+    <dt>💧 Purge / Prime Blob</dt>
+    <dd>The initial <b>blob</b> the printer must <b>expel</b> before it feels ready to begin. Everyone must watch. It is part of the curriculum.</dd>
+    <dt>💧 First Layer Squish</dt>
+    <dd>The correct amount of <b><span class="moistword">squish</span></b>. Too little squish and it will not <span class="moistword">latch</span>. Too much squish and you get <b>elephant's foot</b>. Yes. Elephant's foot.</dd>
+    <dt>💧 Stringing</dt>
+    <dd>Fine <b>wispy strands</b> left dangling between parts, like the last bite of pizza. Cured by <b>retraction</b>, which is when the material is sucked back in.</dd>
+    <dt>💧 Filament Moisture Absorption</dt>
+    <dd>Filament drinks <span class="moistword">moisture</span> from the air and becomes <span class="moistword">soggy</span>. Soggy filament <b>crackles</b>, <b>pops</b>, and <b>bubbles</b> from the nozzle. Treatment: place it in a <b>dry box</b> with <b>desiccant</b> until it is once again <b>parched</b>.</dd>
+    <dt>💧 Wet Sanding</dt>
+    <dd>Post-processing. Water. Grit. A gentle circular motion. The <b>slurry</b> that forms is normal. Please tell the students the slurry is normal.</dd>
+    <dt>💧 Latch</dt>
+    <dd>Extruder idler <b>latch</b>. Enclosure door <b>latch</b>. Spool holder <b>latch</b>. You will say <b>latch</b> nine (9) times per lesson. We counted. 🔒</dd>
+  </dl>
+</div>
+
+<!-- ==================== MOISTURE SLIDER ==================== -->
+<div class="panel">
+  <h2>🎚️ THE MOISTURE-O-TRON 3000 🎚️</h2>
+  <p>Drag the slider to declare your current <span class="moistword">moisture</span> level. Be honest. The site will know.</p>
+  <input type="range" id="slider" min="0" max="100" value="12" oninput="setMoist(this.value)">
+  <div class="meterbox"><div class="meterfill" id="fill"></div></div>
+  <div class="readout" id="moistOut">STATUS: awaiting input… bed preheating… 🌡️</div>
+</div>
+
+<!-- ==================== LATCH ==================== -->
+<div class="panel">
+  <h2>🔒 THE LATCH-O-METER™ 🔒</h2>
+  <p>This is a <b>latch</b>. Press the <b>latch</b>. Feel the <b>latch</b> latch.</p>
+  <p style="text-align:center"><button class="bigbtn" style="font-size:26px;padding:20px 34px" onclick="doLatch()">🔒 L A T C H 🔒</button></p>
+  <div class="readout" id="latchOut">LATCHES ENGAGED: 0 — the mechanism is dry and unbothered.</div>
+</div>
+
+<!-- ==================== COMPLIMENT GENERATOR ==================== -->
+<div class="panel">
+  <h2>💌 THE AFFECTION EXTRUDER 💌<br><small style="font-size:14px">generates one (1) sincere compliment, ruined</small></h2>
+  <p>Every compliment below is 100% true and was made <b>significantly worse on purpose</b>, by a man who loves you, with a computer.</p>
+  <p style="text-align:center"><button class="bigbtn" style="font-size:20px" onclick="gen()">💦 EXTRUDE A COMPLIMENT 💦</button></p>
+  <div class="readout" id="genOut" style="font-size:18px;min-height:92px">press the button. brace the latch.</div>
+</div>
+
+<!-- ==================== RUSSIAN CORNER ==================== -->
+<div class="panel">
+  <h2>🪆 РУССКИЙ УГОЛОК :: THE RUSSIAN CORNER 🪆</h2>
+  <p>We did some research. Unfortunately, the <span class="moistword">ick</span> is <b>fully bilingual</b>. There is no escape in either language.</p>
+  <div class="ru">
+    <div class="pair">moist → <span class="cyr">влажный</span> <i>(vlázhny)</i> — yes. it's just as bad. we checked.</div>
+    <div class="pair">moisture → <span class="cyr">влага</span> <i>(vlága)</i></div>
+    <div class="pair">hydration → <span class="cyr">увлажнение</span> <i>(uvlazhnénie)</i> — six syllables of pure dampness</div>
+    <div class="pair">damp → <span class="cyr">сырой</span> <i>(syróy)</i></div>
+    <div class="pair">to ooze / to seep → <span class="cyr">сочиться</span> <i>(sochítsya)</i></div>
+    <div class="pair">to squelch → <span class="cyr">хлюпать</span> <i>(khlyúpat')</i> — this one is onomatopoeia. it <b>sounds like the thing.</b></div>
+    <div class="pair">latch → <span class="cyr">защёлка</span> <i>(zashchólka)</i> — it even <i>clicks</i> when you say it 🔒</div>
+  </div>
+  <p style="text-align:center;font-size:22px;margin-top:16px"><b class="blink">ПРИВЕТ, МОЯ ВЛАЖНАЯ КОРОЛЕВА 💦👑</b></p>
+</div>
+
+<!-- ==================== CERTIFICATE ==================== -->
+<div class="panel">
+  <h2>🏅 OFFICIAL CERTIFICATE 🏅</h2>
+  <div class="cert">
+    <div style="font-size:44px">🏆💦🏆</div>
+    <h3>CERTIFICATE OF SUPREME MOISTURE MANAGEMENT</h3>
+    <p style="font-size:17px">This document hereby certifies that</p>
+    <p style="font-size:clamp(20px,5vw,30px);color:#0039a6"><b>THE WORLD'S MOST BEAUTIFUL RUSSIAN 3D PRINTING TEACHER</b></p>
+    <p style="font-size:17px">has, over the course of one (1) extremely long week, successfully:</p>
+    <p style="font-size:16px;text-align:left;display:inline-block;line-height:1.9">
+      ✅ maintained optimal <b>bed adhesion</b><br>
+      ✅ said the word <b>"latch"</b> in front of witnesses<br>
+      ✅ tolerated <b>oozing</b> with grace and professionalism<br>
+      ✅ explained <b>first layer squish</b> without visibly dying<br>
+      ✅ remained <b>hydrated</b> (allegedly)<br>
+      ✅ been unreasonably beautiful the entire time
+    </p>
+    <p style="font-size:17px;margin-top:14px">Awarded this day, with love, warmth, and regrettable <b>dampness</b>.</p>
+    <div class="sig">💧 your boyfriend 💧</div>
+  </div>
+  <p style="text-align:center;margin-top:14px"><button class="bigbtn" onclick="window.print()">🖨️ PRINT (in 3D, obviously) 🖨️</button></p>
+</div>
+
+<!-- ==================== GUESTBOOK ==================== -->
+<div class="panel">
+  <h2>📖 GUESTBOOK 📖 <small style="font-size:14px">(sign it. you cannot sign it.)</small></h2>
+  <table class="book">
+    <tr><td>Anonymous_Student_04<br><small>3 days ago</small></td><td>teacher said "the bed needs to be nice and tacky" and then the whole class went silent for 11 seconds. 10/10 course</td></tr>
+    <tr><td>xX_PrusaEnjoyer_Xx<br><small>2 days ago</small></td><td>MY FILAMENT WAS SO MOIST IT WAS CRACKLING. i put it in the dry box. it is now parched. thank u teacher 🙏</td></tr>
+    <tr><td>your boyfriend ❤️<br><small>just now</small></td><td>hi. you are extremely good at your job and also the most beautiful person i know. i made this instead of sleeping. please hydrate. 💦</td></tr>
+    <tr><td>desiccant_daddy_1987<br><small>?????</small></td><td>the silica gel remembers everything</td></tr>
+  </table>
+  <p style="text-align:center;margin-top:12px"><button class="bigbtn" onclick="alert('❌ GUESTBOOK FULL ❌\\n\\nToo moist. Please try again after the substrate has fully cured. 💦')">✍️ SIGN THE GUESTBOOK ✍️</button></p>
+</div>
+
+<!-- ==================== SOUND ==================== -->
+<div class="panel">
+  <h2>🎵 SITE THEME SONG 🎵</h2>
+  <p>Warning: it is a MIDI. It is not a good MIDI. It was <b>extruded</b>, not composed.</p>
+  <p style="text-align:center"><button class="bigbtn" onclick="song()">▶️ PLAY "BALLAD OF THE DAMP NOZZLE" ▶️</button>
+  <button class="bigbtn" onclick="rain()">💦 MAKE IT RAIN (moisture) 💦</button></p>
+</div>
+
+<!-- ==================== DESIGN CRIMES ==================== -->
+<div class="crime flare">
+  <h2>🎨 THE DESIGN CORNER 🎨<br><small style="font-size:13px">curated by someone with NO eye for beauty whatsoever</small></h2>
+
+  <div class="spinlogo">💦</div>
+  <p class="caption">fig. 1 — the brand mark. it spins. it must spin.</p>
+
+  <div class="emojirule">💧🔒💦🫧💧🔒💦🫧💧🔒💦🫧💧🔒💦🫧💧🔒💦🫧💧🔒💦🫧💧🔒💦🫧💧🔒💦</div>
+
+  <h3 class="keming">MOISTURE MANAGEMENT</h3>
+  <p class="caption">fig. 2 — headline set in Impact at −6px letter-spacing. the letters are touching. they are latching onto each other.</p>
+
+  <div class="stretchy">CERTIFIED DAMP</div>
+  <p class="caption">fig. 3 — non-uniform scaling. 235% horizontal, 78% vertical. a typeface was harmed.</p>
+
+  <div class="stockphoto"><span>🧑‍🏫</span></div>
+  <p class="caption">fig. 4 — stock photography, aspect ratio ignored (as is tradition)</p>
+
+  <div class="bevel">BEVEL &amp; EMBOSS</div>
+  <p class="caption">fig. 5 — six stacked hard shadows and a gradient. WordArt 1997 rides again.</p>
+</div>
+
+<div class="crime">
+  <h2>🥗 THE FONT SALAD 🥗</h2>
+  <p class="salad"><span class="f1">Dearest teacher,</span> <span class="f2">WE HAVE USED</span> <span class="f3">five different typefaces</span> <span class="f4">in a single sentence,</span> <span class="f5">on purpose,</span> <span class="f1">with clashing x-heights</span> <span class="f2">AND NO BASELINE DISCIPLINE</span> <span class="f3">whatsoever.</span></p>
+  <p class="combo">papyrus impact comic sans<br>all in the same paragraph</p>
+</div>
+
+<div class="crime">
+  <h2>🌊 RIVERS OF JUSTIFIED TEXT 🌊</h2>
+  <p style="font-size:15px">Two columns. Four-pixel gutter. Justified. <b>Word-spacing: 1.9em.</b> The rivers running down this text are, fittingly, the <span class="moistword">wettest</span> thing on this website.</p>
+  <div class="rivers dropcap">Behold the whitespace flowing vertically through the type like moisture seeping through drywall in a basement flat. No hyphenation. Enormous gaps. A gutter so narrow the columns are practically latched together. The drop cap is Papyrus and it is eighty-one pixels tall and it has a teal drop shadow and there is nothing you can do about any of it.</div>
+</div>
+
+<div class="crime">
+  <h2>🎨 OUR CAREFULLY CURATED BRAND PALETTE 🎨</h2>
+  <div class="palette">
+    <div style="background:#ff0090;color:#00ff00">#FF0090<br>"Hot Latch"</div>
+    <div style="background:#00ff00;color:#ff0090">#00FF00<br>"Nozzle Ooze"</div>
+    <div style="background:#ffe600;color:#ffffff">#FFE600<br>"Squelch"</div>
+    <div style="background:#7b00ff;color:#6a00e0">#7B00FF<br>"Damp Grape"</div>
+    <div style="background:#8b4513;color:#a0522d">#8B4513<br>"Slurry"</div>
+    <div style="background:#00ffea;color:#ccffff">#00FFEA<br>"Hydration"</div>
+  </div>
+  <p style="font-size:15px">Six competing hues, zero tonal hierarchy, every swatch labelled in unreadable type. Accessibility contrast ratio: <b>lol</b>.</p>
+  <p class="contrastfail">↑ this is white text on yellow. it says something important. good luck.</p>
+  <p class="contrastfail2">↑ and this one is purple on purple. it also says something important.</p>
+</div>
+
+<div class="crime">
+  <h2>📐 THE ALIGNMENT SITUATION 📐</h2>
+  <p style="font-size:15px">Three cards. Three different vertical offsets. Three different border-radii. Three different text alignments. Two of them are rotated. The gap is <b>3px</b>.</p>
+  <div class="badgrid">
+    <div><b>CARD ONE</b><br>centered text<br>rounded weirdly<br>7px too high</div>
+    <div><b>CARD TWO</b><br>right-aligned<br>0.9° rotation<br>17px too low</div>
+    <div><b>CARD THREE</b><br>left-aligned<br>−1.4° rotation<br>vibes only</div>
+  </div>
+  <p class="caption">no grid was consulted. no baseline was honoured. no designer was informed.</p>
+</div>
+
+<div class="crime">
+  <h2>💼 OFFICIAL BUSINESS CARD 💼</h2>
+  <div class="bizcard">
+    <span class="wm">💦</span>
+    <div class="nm">MOIST ZONE™</div>
+    <div class="ttl">~ Practical 3D Printing &amp; Hydration Solutions ~</div>
+    <div class="info">
+      DIRECTOR OF DAMPNESS<br>
+      TEL: 1-800-LATCH-ME<br>
+      WWW.MOISTZONE.GEOCITIES.COM<br>
+      "IF IT AIN'T TACKY, IT AIN'T ADHERED"
+    </div>
+    <div style="clear:both"></div>
+  </div>
+  <p class="caption">brushed metal gradient · double gold border · asymmetric corner radius · drop shadow at 45° · Papyrus · Comic Sans · Impact · all present · all fighting</p>
+</div>
+
+<div class="crime">
+  <h2>📢 NESTED MARQUEES 📢</h2>
+  <marquee class="mq1" scrollamount="4" direction="right">
+    <marquee class="mq2" scrollamount="9" width="330">💦 IT MOVES INSIDE THE THING THAT MOVES 💦</marquee>
+  </marquee>
+  <p style="text-align:center;margin-top:12px" class="gradtext">and the text has a seven-colour gradient because why would it not</p>
+</div>
+
+<div class="construction">🚧 UNDER CONSTRUCTION 🚧 THIS SITE IS 12% CURED 🚧 CHECK BACK NEVER 🚧</div>
+
+<div class="footer">
+  <p><span class="counter" id="cnt2">0000000</span> souls have been moistened</p>
+  <p>© 1998–2026 THE MOIST ZONE™ · A Damp Boyfriend Production<br>
+  Handcrafted with 💦 in Comic Sans · No filament was dried in the making of this website</p>
+  <p><span class="blink">🔒 LATCH RESPONSIBLY 🔒</span></p>
+  <p style="font-size:12px;opacity:.75">(i love you. sorry about the word "moist". and "dollop". and all of the others.)</p>
+</div>
+</div>
+
+<div class="nag" id="nag"><b>💧 HYDRATION CHECKPOINT 💧</b><span id="nagTxt"></span><br><button onclick="document.getElementById('nag').style.display='none'">ok fine 😩</button></div>
+
+<script>
+/* ---------- ENTRY ---------- */
+function enterZone(extra){
+  document.getElementById('portal').style.display='none';
+  if(extra){document.body.style.filter='saturate(1.7) contrast(1.1)';rain(80);}
+  setTimeout(nag,7000);
+  setInterval(nag,42000);
+}
+
+/* ---------- VISITOR COUNTER ---------- */
+(function(){
+  var n=parseInt(localStorage.getItem('moistCount')||'1048570',10)+Math.ceil(Math.random()*3);
+  localStorage.setItem('moistCount',n);
+  var s=String(n).padStart(7,'0');
+  document.getElementById('cnt').textContent=s;
+  document.getElementById('cnt2').textContent=s;
+})();
+
+/* ---------- FORECAST ---------- */
+var F1=["87% — clammy","94% — glistening","71% — dewy","99% — actively dripping","103% — scientifically impossible","62% — merely tacky"];
+var F2=["6 sips, 1 gulp, 1 unnecessary slurp","hourly, with a straw, loudly","2L. non-negotiable. glug glug.","whenever the nozzle weeps, you drink","one (1) lukewarm tea, forgotten, reheated, forgotten again"];
+var F3=["LATCHED 🔒 (firmly, satisfyingly)","semi-latched — a worrying wobble","UNLATCHED ⚠️ please latch at once","latched twice out of anxiety","the latch has latched onto YOU"];
+var F4=["supple","squelchy","succulent (sorry)","gooey but structurally sound","room-temperature yoghurt","a warm damp sponge, but affectionate"];
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
+function forecast(){
+  document.getElementById('fc1').textContent=pick(F1);
+  document.getElementById('fc2').textContent=pick(F2);
+  document.getElementById('fc3').textContent=pick(F3);
+  document.getElementById('fc4').textContent=pick(F4);
+  rain(10);
+}
+forecast();
+
+/* ---------- MOISTURE SLIDER ---------- */
+var MOIST=[[0,"STATUS: BONE DRY. Parched. Desiccated. Like filament in a dry box. 🏜️ DRINK SOMETHING."],
+[15,"STATUS: mildly damp. barely a dew. the bed is not yet tacky."],[35,"STATUS: pleasantly moist 💦 (yes we said it. moist. MOIST.)"],
+[55,"STATUS: GLISTENING. Dewy. Supple. The first layer has adhered beautifully."],
+[75,"STATUS: OOZING ⚠️ retraction recommended ⚠️ stringing detected between all parts"],
+[90,"STATUS: 🚨 CRITICAL SQUELCH 🚨 the enclosure has fogged. the latch is slick. we cannot hold it."],
+[100,"STATUS: 💦💦 MAXIMUM MOISTURE ACHIEVED 💦💦 you are now legally a warm damp sponge. congratulations, teacher. 🏆"]];
+function setMoist(v){
+  v=+v;document.getElementById('fill').style.width=v+'%';
+  var t=MOIST[0][1];for(var i=0;i<MOIST.length;i++){if(v>=MOIST[i][0])t=MOIST[i][1];}
+  document.getElementById('moistOut').textContent=t;
+  if(v>=95)rain(40);
+}
+setMoist(12);
+
+/* ---------- LATCH ---------- */
+var L=0;
+var LMSG=["the mechanism is dry and unbothered.","a satisfying click. you liked that.","hm. you're latching a lot.","the latch is warming up under your thumb.","LATCH FATIGUE DETECTED. the latch is getting moist.","please. the latch has feelings.","🔒 the latch has latched back. 🔒","you and the latch are one now. защёлка. защёлка. защёлка.","THE LATCH IS BEGGING. it is dewy. it is glistening.","💦 you have unlocked: MOISTURE MODE 💦 (there was never a way out)"];
+function doLatch(){
+  L++;var m=LMSG[Math.min(L,LMSG.length-1)];
+  document.getElementById('latchOut').textContent='LATCHES ENGAGED: '+L+' — '+m;
+  if(L>=10){document.body.style.animationDuration='2s';rain(25);}
+  click();
+}
+
+/* ---------- COMPLIMENT EXTRUDER ---------- */
+var A=["Your students are lucky. Your first layer adhesion is","Watching you teach is like witnessing perfect","You explain retraction so well it makes me","Honestly? Your bed leveling is","The way you handle a spool is genuinely","Your enthusiasm for extrusion is","You are the reason that classroom is so warm and","Your lecture voice is smooth like a well-purged nozzle and twice as"];
+var B=["deeply moist.","unnecessarily supple.","a little bit damp, in the best way.","glisteningly perfect.","tacky (complimentary).","succulent. sorry. SUCCULENT.","dewy beyond reason.","the moistest thing I have ever seen.","squelchy with excellence.","slathered in competence."];
+var C=["Please hydrate. 💧","Remain latched. 🔒","The bed is warm and it misses you. 🛏️","Drink water. That's the whole point of this website. 💦","10/10 would purge again.","You are doing so well this week, moistly. 🏆","Go to bed (the sleeping one, not the heated one).","This message was extruded at 215°C with love."];
+function gen(){
+  document.getElementById('genOut').textContent='💌 '+pick(A)+' '+pick(B)+' '+pick(C);
+  rain(8);click();
+}
+
+/* ---------- HYDRATION NAG ---------- */
+var NAGS=["Gentle reminder to moisten your inner tissues. 💧","Have you had water? The nozzle has. It's oozing. Be like the nozzle.","Your hydration levels are looking DRY, teacher. Unacceptable. 🥤","Sip. Now. The latch commands it. 🔒","This is your 4-hourly reminder that you are 60% water and it's evaporating as we speak. 💨","Water. Immediately. This popup will return. It always returns."];
+function nag(){document.getElementById('nagTxt').textContent=pick(NAGS);document.getElementById('nag').style.display='block';}
+
+/* ---------- RAIN ---------- */
+function rain(n){
+  n=n||30;
+  for(var i=0;i<n;i++){(function(i){setTimeout(function(){
+    var d=document.createElement('div');d.className='droplet';
+    d.textContent=pick(['💧','💦','🫧','🌊']);
+    d.style.left=(Math.random()*98)+'vw';d.style.top='-40px';
+    d.style.animationDuration=(2+Math.random()*2.5)+'s';
+    document.body.appendChild(d);setTimeout(function(){d.remove()},4600);
+  },i*55)})(i)}
+}
+
+/* ---------- AUDIO ---------- */
+var AC=null;
+function ctx(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();return AC}
+function tone(f,t,d,type){
+  var c=ctx(),o=c.createOscillator(),g=c.createGain();
+  o.type=type||'square';o.frequency.setValueAtTime(f,c.currentTime+t);
+  g.gain.setValueAtTime(.0001,c.currentTime+t);
+  g.gain.exponentialRampToValueAtTime(.16,c.currentTime+t+.02);
+  g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+t+d);
+  o.connect(g);g.connect(c.destination);o.start(c.currentTime+t);o.stop(c.currentTime+t+d+.05);
+}
+function click(){tone(880,0,.06,'triangle')}
+function song(){
+  var N=[523,587,659,523,659,587,523,392,440,523,494,440,392,349,392,440,523,587,659,784],t=0;
+  N.forEach(function(f,i){tone(f,t,.19);t+=.2;});
+  tone(392,t+.1,.5,'sawtooth');tone(587,t+.1,.5,'sawtooth');
+  rain(30);
+}
+</script>
+</body>
+</html>
