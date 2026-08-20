@@ -57,9 +57,6 @@ dl.gloss dd{margin:4px 0 0 18px;font-size:16.5px;border-left:5px solid var(--goo
 .bigbtn:hover{background:linear-gradient(#7fff00,#00c46a);transform:rotate(-2deg) scale(1.05)}
 .bigbtn:active{border-style:inset}
 .readout{margin-top:14px;padding:12px;background:#000;color:#0f0;font-family:"Courier New",monospace;font-size:16px;min-height:56px;border:3px inset #0f0}
-input[type=range]{width:100%;height:34px;accent-color:#ff0090}
-.meterbox{background:#000;border:4px inset #999;padding:6px}
-.meterfill{height:26px;background:linear-gradient(90deg,#00ffea,#7fff00,#ffe600,#ff0090);width:12%;transition:width .25s;box-shadow:0 0 12px #fff inset}
 
 /* ===== 3D PRINT VIEWER ===== */
 .viewer{position:relative;background:#0a0a14;border:6px inset #666;box-shadow:inset 0 0 40px #000;touch-action:none}
@@ -223,15 +220,6 @@ marquee{display:block}
   </dl>
   <div class="readout" id="wordOut" style="font-size:17px">press the button to receive a word you did not ask for</div>
   <p style="text-align:center"><button class="bigbtn" onclick="bigword()">📖 DISPENSE AN OBFUSCATORY LEXEME 📖</button></p>
-</div>
-
-<!-- ===================== MOISTURE-O-TRON ===================== -->
-<div class="panel">
-  <h2>🎚️ THE MOISTURE-O-TRON 3000 🎚️</h2>
-  <p>Declare your present hydration status. The apparatus is <b>perspicacious</b> and will know if you lie.</p>
-  <input type="range" id="slider" min="0" max="100" value="12" oninput="setMoist(this.value)">
-  <div class="meterbox"><div class="meterfill" id="fill"></div></div>
-  <div class="readout" id="moistOut">STATUS: awaiting input… bed preheating… 🌡️</div>
 </div>
 
 <!-- ===================== LATCH ===================== -->
@@ -417,22 +405,6 @@ function forecast(){
   document.getElementById('fc4').textContent=pick(F4);
 }
 forecast();
-
-/* ---------- MOISTURE SLIDER ---------- */
-var MOIST=[[0,"STATUS: BONE DRY. Desiccated. Parched as filament in a dry box. 🏜️ DRINK SOMETHING."],
-[15,"STATUS: mildly damp. barely a dew. the bed is not yet tacky."],
-[35,"STATUS: pleasantly moist 💦 (yes. we said it. once.)"],
-[55,"STATUS: GLISTENING. Dewy. Supple. First layer has adhered beautifully."],
-[75,"STATUS: OOZING ⚠️ retraction recommended ⚠️ stringing detected between all parts"],
-[90,"STATUS: 🚨 CRITICAL SQUELCH 🚨 the enclosure has fogged. the latch is slick."],
-[100,"STATUS: 💦 MAXIMUM HYDRATION ACHIEVED 💦 you are now legally a humectant. congratulations, teacher. 🏆"]];
-function setMoist(v){
-  v=+v;document.getElementById('fill').style.width=v+'%';
-  var t=MOIST[0][1];for(var i=0;i<MOIST.length;i++){if(v>=MOIST[i][0])t=MOIST[i][1];}
-  document.getElementById('moistOut').textContent=t;
-  if(v>=95)rain(40);
-}
-setMoist(12);
 
 /* ---------- LATCH ---------- */
 var L=0;
